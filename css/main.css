@@ -1,0 +1,11 @@
+*{
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.nav-images{
+    width:5em;
+    border-radius:20em;
+}
