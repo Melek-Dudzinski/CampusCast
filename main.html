@@ -10,45 +10,77 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <title>CampusCast - Home Page</title>
 </head>
+
 <body>
     <header>
         <h1 id="greeting">Hello User!</h1>
     </header>
     <nav>
-        <img class="nav-images" src="img/personal.png" alt="personal">
-        <img class="nav-images" src="img/university1.png" alt="university">
-        <img class="nav-images" src="img/house.png" alt="home">
-        <img class="nav-images" src="img/search.png" alt="search">
-    </nav>
-    <h2 id="location">Location</h2>
-    <section>
-        <div class="weather">
-            <h3>Departure</h3>
-            <ul style="list-style-type:none;">
-                <li>Time<img src="img/time.png"></li>
-                <li>Temperature<img src="img/temperature.png"></li>
-                <li>Wind<img src="img/wind.png"></li>
-                <li>Humidity<img src="img/humidity.png"></li>
+        <img class="nav-images" src="img/personal.png" alt="Personal">
+        <img class="nav-images" src="img/university1.png" alt="University">
+        <img class="nav-images" src="img/house.png" alt="Home">
+        <img class="nav-images" src="img/search.png" alt="Search">
+      </nav>
+      <div class="weather-container">
+        <h2>Location</h2>
+        <div class="weather-box">
+          <h3 id="titles">Departure</h3>
+          <div class="weather">
+            <ul class="elements">
+              <li>Time<img src="img/time.png"></li>
+              <li>Temperature<img src="img/temperature.png" id="temp"></li>
+              <li>Wind<img src="img/wind.png" id="wind"></li>
+              <li>Humidity<img src="img/humidity.png" id="humidity"></li>
             </ul>
+          </div>
         </div>
-        <div class="weather">
-            <h3>Current weather</h3>
-            <ul style="list-style-type:none;">
-                <li>Time<img src="img/time.png"></li>
-                <li>Temperature<img src="img/temperature.png"></li>
-                <li>Wind<img src="img/wind.png"></li>
-                <li>Humidity<img src="img/humidity.png"></li>
+        <div class="weather-box">
+          <h3 id="titles">Current weather</h3>
+          <div class="weather">
+            <ul class="elements">
+              <li>Time<img src="img/time.png"></li>
+              <li>Temperature<img src="img/temperature.png" id="temp"></li>
+              <li>Wind<img src="img/wind.png" id="wind"></li>
+              <li>Humidity<img src="img/humidity.png" id="humidity"></li>
             </ul>
+          </div>
         </div>
-        <div class="weather">
-            <h3>Return</h3>
-            <ul style="list-style-type:none;">
-                <li>Time<img src="img/time.png"></li>
-                <li>Temperature<img src="img/temperature.png"></li>
-                <li>Wind<img src="img/wind.png"></li>
-                <li>Humidity<img src="img/humidity.png"></li>
+        <div class="weather-box">
+          <h3 id="titles">Return</h3>
+          <div class="weather">
+            <ul class="elements">
+              <li>Time<img src="img/time.png"></li>
+              <li>Temperature<img src="img/temperature.png" id="temp"></li>
+              <li>Wind<img src="img/wind.png" id="wind"></li>
+              <li>Humidity<img src="img/humidity.png" id="humidity"></li>
             </ul>
+          </div>
         </div>
-    </section>
-</body>
-</html>
+        
+        <div class = "weather-box">
+            <h3 id="titles">Sunrise & Sunset Time</h3>
+            <ul class="weather">
+                <li>Sunrise</li>
+                <li>Sunset</li>
+            </ul>
+            
+        </div>
+
+        <div id="reminder-box">
+            <h3 id="titles">Reminders</h3>
+        </div>
+
+        <div id="weekly-weather">
+            <h3 id="titles">Weekly Forecast</h3>
+            <ul class="weather">
+                <li>Monday</li>
+                <li>Tuesday</li>
+                <li>Wednesday</li>
+                <li>Thursday</li>
+                <li>Friday</li>
+            </ul>
+            
+        </div>
+      </div>
+    </body>
+    </html>
