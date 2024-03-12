@@ -19,6 +19,11 @@ body {
     height: 100px;
   }
   
+  figure figcaption{
+    text-align: center;
+    font-weight:bold;
+  }
+
   .weather-container {
     display: flex;
     flex-direction: column;
@@ -40,10 +45,17 @@ body {
   }
   
   .weather img {
-    width: 30px;
-    height: 30px;
+    width: 45px;
     margin-bottom: 5px;
   }
+
+  /* .weather li img {
+    align-items: left;
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+  } */
+
 
   #reminder-box {
     width: 80%;
@@ -71,14 +83,7 @@ body {
     margin-left: 30px;
   }
 
-  .weather li img {
-    align-items: left;
-    width: 30px;
-    height: 30px;
-    margin-left: 20px;
-  }
-
-  #temp{
+  /* #temp{
     height: 50px;
   }
 
@@ -88,7 +93,7 @@ body {
 
   #humidity{
     height: 42px
-  }
+  } */
 
   .weather li {
     display: flex;
