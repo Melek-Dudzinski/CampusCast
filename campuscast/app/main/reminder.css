@@ -1,0 +1,9 @@
+#reminder-box {
+    width: 80%;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    height: 300px; 
+    background: white;
+    border-radius: 35px;
+  }

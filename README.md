@@ -1,2 +1,0 @@
-# CampusCast
-Weather App

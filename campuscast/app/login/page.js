@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/login.css"></link>
-    <title>Login</title>
-</head>
-<body>
+import './login.css'
+import Link from 'next/link'
+
+export default function Login() {
+    return (
+        <>
     <header>
         <h1>Login to Check the Weather</h1>
     </header>
@@ -17,7 +14,7 @@
                     <tr>
                         <tr>
                             <td>
-                                <a href="register.html">Register?</a>
+                                <Link href="/register">Register</Link>
                             </td>
                         </tr>
                         <td>
@@ -28,16 +25,16 @@
                     </tr>
                     <tr>
                         <td>
-                            <label for="username">Email</label><br>
-                            <input type="email" id="username" name="username" required><br>
-                            <!-- Use type="email" for email validation and "required" to make the field mandatory -->
+                            <label for="username">Email</label><br/>
+                            <input type="email" id="username" name="username" required/><br/>
+                            {/* <!-- Use type="email" for email validation and "required" to make the field mandatory --> */}
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label for="password">Password:</label><br>
-                            <input type="password" id="password" name="password" minlength="8" required><br><br>
-                            <!-- Use "minlength" to specify the minimum number of characters required for the password -->
+                            <label for="password">Password:</label><br/>
+                            <input type="password" id="password" name="password" minlength="8" required/><br/><br/>
+                            {/* <!-- Use "minlength" to specify the minimum number of characters required for the password --> */}
                         </td>
                     </tr>
                     <tr>
@@ -50,5 +47,6 @@
             </fieldset>
         </form>
     </div>
-</body>
-</html>
+    </>
+    )
+}
