@@ -6,4 +6,4 @@
 
 Once you have run 'npm install', you should also now have a folder called node_modules. If you already have this folder, no need to run 'npm install', only run 'npm run dev'
 
-Pages are stored in campuscast/app in their own directories (e.g main, login, register). Each page directory needs a page.js to function and a main.css. Page.js should be simple and contain the calls to components. Each component should be in the page direcotry folder and should have its own css file (e.g reminder.js and reminder.css). Use main as a guide on layout
+You can ignore everything apart from the 'public' folder and 'app' folder. Public is used to store any images. App contains all the pages for the website. Pages are stored in campuscast/app in their own directories (e.g main, login, register). Each page directory needs a page.js to function and a main.css. Page.js should be simple and contain the calls to components. Each component should be in the page direcotry folder and should have its own css file (e.g reminder.js and reminder.css). Use main as a guide on layout.
