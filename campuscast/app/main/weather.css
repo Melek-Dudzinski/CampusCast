@@ -1,0 +1,40 @@
+
+  .weather-box {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+    width: 80%;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 35px;
+    margin-bottom: 20px;
+  }
+  
+  .weather li {
+    list-style: none;
+  }
+
+  .weather li img {
+    align-items: left;
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+  }
+
+  #temp{
+    height: 50px;
+  }
+
+  #wind{
+    width: 45px;
+  }
+
+  #humidity{
+    height: 42px
+  }
+
+  .weather li {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+    width: 30%;
+    margin-bottom: 20px;
+  }
