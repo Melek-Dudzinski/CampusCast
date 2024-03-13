@@ -1,4 +1,4 @@
-body {
+  body {
     font-family: 'Nunito', sans-serif;
     background-color: #f9f9f9;
     margin: 0;
@@ -14,7 +14,7 @@ body {
   }
 
   header h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   
   .login-box {
@@ -26,7 +26,7 @@ body {
     align-items: center;
     justify-content: center;
     box-sizing: border-box; /* Added this property */
-    padding-left: 50px;
+    padding-left: 10px;
     width: 40%;
     height: 700px;
     margin-top: 100px;
@@ -54,14 +54,13 @@ body {
     background-color: #4CAF50;
     border: none;
     color: white;
-    padding: 15px 30px; /* Increased padding to 15px 30px */
     cursor: pointer;
-    font-size: 2rem;
     font-weight: bold;
     transition: background-color 0.3s ease;
     margin-bottom: 5%;
-    margin-left: auto;
     text-decoration: none;
+    padding: 2%;
+    font-size: 1.5rem; 
   }
   
   .login-box button[type="submit"]:hover {
@@ -72,10 +71,9 @@ body {
   fieldset {
     border: none;
   }
-
   
   .login-box h1 {
-    font-size: 2.5rem; /* Increased font size to 2.5rem */
+    font-size: 2rem; /* Increased font size to 2.5rem */
   }
   
   .login-box label {
@@ -83,4 +81,23 @@ body {
     font-size: 1.5rem; /* Increased font size to 1.5rem */
     font-weight: bold;
     margin-bottom: 10px; /* Increased margin to 10px */
+  }
+
+  .register {
+    text-decoration:underline;
+    color: blue;
+  }
+
+  .sign {
+   padding-top: 15%;
+   padding-bottom: 15%;
+  }
+
+  .login-box button {
+    margin-bottom: 0.5rem;
+    margin-right: 3rem;
+  }
+  
+  .login-box button:last-child {
+    margin-top: 0.5rem;
   }
