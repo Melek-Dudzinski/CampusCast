@@ -1,8 +1,10 @@
+import './register.css'
+
 export default function Register() {
     return (
         <>
         <header>
-            <h1>Login to Check the Weather</h1>
+            <h1>CampusCast Registration</h1>
         </header>
         <div class="login-box">
             <form id="form" name="login-form" method="post" action="">
@@ -11,7 +13,7 @@ export default function Register() {
                         <tr>
                             <td>
                                 <hgroup>
-                                    <h1>Register</h1>
+                                    <h1 class="register">Register</h1>
                                 </hgroup>
                             </td>
                         </tr>
