@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useClient } from 'next/data-client'; // Import useClient from next/data-client
 
 const Weather = () => {
+  useClient(); // Mark this component as a client-side component
+
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState(null);
 
