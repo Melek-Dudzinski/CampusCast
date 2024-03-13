@@ -20,7 +20,6 @@ function expand(e){
 function contract(){
     showSearchBar = false
     fig.removeChild(searchBar);
-    console.log(123)
 }
 
 function toggleSearch(){

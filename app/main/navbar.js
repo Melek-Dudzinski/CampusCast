@@ -8,10 +8,30 @@ export default function Navbar() {
                 <h1 id="greeting">Hello User!</h1>
             </header>
             <nav>
-                <Image src="/personal.png" width="100" height="100" alt="Personal"/>
-                <Image src="/university.png" width="100" height="100" alt="University"/>
-                <Image src="/house.png" width="100" height="100" alt="Home"/>
-                <Image src="/search.png" width="100" height="100" alt="Search"/>
+                <figure>
+                    <button id="personal" type="button">
+                        <img src="/personal.png" width="100" height="100" alt="Personal"/>
+                    </button>
+                    <figcaption>Personal</figcaption>
+                </figure>
+                <figure>
+                    <button id="university" type="button">
+                        <img src="/university.png" width="100" height="100" alt="University"/>
+                    </button>
+                    <figcaption>University</figcaption>
+                </figure>
+                <figure>
+                    <button id="house" type="button">
+                        <img src="/home.png" width="100" height="100" alt="Home"/>
+                    </button>
+                    <figcaption>Home</figcaption>
+                </figure>
+                <figure id="fig">
+                    <button id="search" type="button">
+                        <img id="magnifier" src="/search.png" width="100" height="100" alt="Search"/>
+                    </button>
+                    <figcaption>Search</figcaption>
+                </figure>               
             </nav>
         </>
     )

@@ -1,5 +1,4 @@
 import './main.css'
-import Image from 'next/image'
 import Navbar from './navbar.js'
 import WeatherContainer from './weatherContainer.js'
 import SunRiseSet from './sunRiseSet.js'
