@@ -6,7 +6,7 @@ export default function Navbar() {
     return (
         <>
             <header>
-                <h1 id="greeting">Hello User!</h1>
+                <h1 id="greeting">Hello User! </h1>
             </header>
             <nav>
                 <Link href="/profile">
