@@ -2,7 +2,7 @@ export default function Register() {
     return (
         <>
         <header>
-            <h1>Login to Check the Weather</h1>
+            <h1>Loginnnnn to Check the Weather</h1>
         </header>
         <div class="login-box">
             <form id="form" name="login-form" method="post" action="">
