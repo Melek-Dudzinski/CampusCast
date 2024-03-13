@@ -1,0 +1,29 @@
+  nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+  }
+  
+  nav img {
+    width: 75px;
+    height: 75px;
+    border-radius: 10em;
+    border: solid 1px rgb(255, 255, 255);
+  }
+
+  nav button{
+    border-radius: 10em;
+    border:transparent;
+    background-color: transparent;
+  }
+
+  nav button:hover{
+    transition-duration: 0.2s;
+    transform:scale(1.15);
+  }
+
+  figure figcaption{
+    text-align: center;
+    font-weight:normal;
+    font-size:90%;
+  }
