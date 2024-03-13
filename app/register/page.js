@@ -33,7 +33,9 @@ export default function Register() {
                         </tr>
                         <tr>
                             <td>
-                                <button type="submit">Register</button>
+                                <button type="submit">
+						            <a href="login">Register</a>
+					            </button>
                                 <button type="submit" id="cancel">Cancel</button>
                             </td>
                         </tr>

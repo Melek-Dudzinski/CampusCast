@@ -41,7 +41,9 @@ export default function Login() {
                     </tr>
                     <tr>
                         <td>
-                            <button type="submit">Log in</button>
+                            <button type="submit">
+						        <a href="main">Log In</a>
+					        </button>
                             <button type="submit" id="cancel">Cancel</button>
                         </td>
                     </tr>
