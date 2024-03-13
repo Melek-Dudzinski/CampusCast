@@ -14,14 +14,16 @@ export default function Login() {
                     <tr>
                         <tr>
                             <td>
-                                <Link href="/register">Register</Link>
+                                <a class="register" href="/register">Register?</a>
                             </td>
                         </tr>
-                        <td>
-                            <hgroup>
-                                <h1>Sign in page</h1>
-                            </hgroup>
-                        </td>
+                        <tr>
+                            <td>
+                                <hgroup class="sign">
+                                    <h1>Sign in</h1>
+                                </hgroup>
+                            </td>
+                        </tr>
                     </tr>
                     <tr>
                         <td>
