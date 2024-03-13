@@ -33,6 +33,31 @@ export default function Register() {
                         </tr>
                         <tr>
                             <td>
+                                <label htmlFor="weekday">Weekday:</label><br/>
+                                <select id="weekday" name="weekday" required>
+                                    <option value="">Select a weekday</option>
+                                    <option value="Monday">Monday</option>
+                                    <option value="Tuesday">Tuesday</option>
+                                    <option value="Wednesday">Wednesday</option>
+                                    <option value="Thursday">Thursday</option>
+                                    <option value="Friday">Friday</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label htmlFor="come-time">Come time:</label><br/>
+                                <input type="time" id="time" name="come-time" required />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label htmlFor="leave-time">Leave time:</label><br/>
+                                <input type="time" id="time" name="leave-time" required />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
                                 <button type="submit">
 						            <a href="login">Register</a>
 					            </button>
