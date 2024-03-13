@@ -9,7 +9,7 @@ export default function Navbar() {
             </header>
             <nav>
                 <Image src="/personal.png" width="100" height="100" alt="Personal"/>
-                <Image src="/university1.png" width="100" height="100" alt="University"/>
+                <Image src="/university.png" width="100" height="100" alt="University"/>
                 <Image src="/house.png" width="100" height="100" alt="Home"/>
                 <Image src="/search.png" width="100" height="100" alt="Search"/>
             </nav>
