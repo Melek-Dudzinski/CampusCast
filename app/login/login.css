@@ -26,7 +26,7 @@
     align-items: center;
     justify-content: center;
     box-sizing: border-box; /* Added this property */
-    padding-left: 10px;
+    padding-left: 40px;
     width: 40%;
     height: 700px;
     margin-top: 100px;
@@ -46,8 +46,9 @@
     border: 1px solid #ccc; 
     padding: 10%;
     margin-bottom: 5%;
+    font-size: 1.5rem;
     width: 100%;
-    font-size: 2rem;
+    height: 3rem;
   }
   
   .login-box button[type="submit"] {
