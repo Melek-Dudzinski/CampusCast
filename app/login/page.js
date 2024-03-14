@@ -10,44 +10,26 @@ export default function Login() {
     <div class="login-box">
         <form id="form" name="login-form" method="post" action="">
             <fieldset>
-                <table>
-                    <tr>
-                        <tr>
-                            <td>
-                                <a class="register" href="/register">Register?</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <hgroup class="sign">
-                                    <h1>Sign in</h1>
-                                </hgroup>
-                            </td>
-                        </tr>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="username">Email</label><br/>
-                            <input type="email" id="username" name="username" required/><br/>
-                            {/* <!-- Use type="email" for email validation and "required" to make the field mandatory --> */}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="password">Password:</label><br/>
-                            <input type="password" id="password" name="password" minlength="8" required/><br/><br/>
-                            {/* <!-- Use "minlength" to specify the minimum number of characters required for the password --> */}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <button type="submit">
-						        <a href="main">Log In</a>
-					        </button>
-                            <button type="submit" id="cancel">Cancel</button>
-                        </td>
-                    </tr>
-                </table>
+                <a class="register" href="/register">Register?</a>
+                            
+                <hgroup class="sign">
+                    <h1>Sign in</h1>
+                </hgroup>
+
+                <label for="username">Email</label><br/>
+                <input type="email" id="username" name="username" required/><br/>
+                {/* <!-- Use type="email" for email validation and "required" to make the field mandatory --> */}
+                        
+                <label for="password">Password:</label><br/>
+                <input type="password" id="password" name="password" minlength="8" required/><br/><br/>
+                {/* <!-- Use "minlength" to specify the minimum number of characters required for the password --> */}
+
+                <div>    
+                    <button type="submit">
+                        <a href="main">Log In</a>
+                    </button>
+                    <button type="submit" id="cancel">Cancel</button>
+                </div>    
             </fieldset>
         </form>
     </div>
