@@ -1,12 +1,12 @@
 body {
     font-family: 'Nunito', sans-serif;
-    background-color: #f9f9f9;
+    background-color: rgba(130, 168, 236, 0.459);
     margin: 0;
     padding: 0;
   }
   
   header {
-    background-color: #4CAF50;
+    background-color: #1d9812;
     color: white;
     padding: 1.25rem; 
     text-align: center;
@@ -17,32 +17,31 @@ body {
     font-size: 2rem;
   }
   
-  .login-box {
+  .register-box {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    background: linear-gradient(to bottom, rgba(130, 168, 236, 0.459) 60%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
     border-radius: 35px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    padding-left: 50px;
+    padding-left: 40px;
     width: 40%;
     height: 50rem; /* Increase the height value to make the register box bigger */
-    margin-top: 100px;
+    margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 100px;
+    margin-bottom: 10px;
   }
 
-  .login-box form {
-    display: flex;
-    flex-direction: column;
+  .register-box form {
+    display: grid;
     width: 80%;
   }
   
-  .login-box input[type="email"],
-  .login-box input[type="password"] {
+  .register-box input[type="email"],
+  .register-box input[type="password"] {
     border: 1px solid #ccc; 
     padding: 5%;
     margin-bottom: 5%;
@@ -51,8 +50,8 @@ body {
     height: 0rem;
   }
   
-  .login-box button[type="submit"] {
-    background-color: #4CAF50;
+  .register-box button[type="submit"] {
+    background-color: #1d9812;
     border: none;
     color: white;
     cursor: pointer;
@@ -63,8 +62,8 @@ body {
     padding: 2%;
   }
   
-  .login-box button[type="submit"]:hover {
-    background-color: rgba(0, 153, 255, 0.801);
+  .register-box button[type="submit"]:hover {
+    background-color: rgba(30, 153, 235, 0.801);
     color: white;
   }
 
@@ -72,11 +71,11 @@ body {
     border: none;
   }
   
-  .login-box h1 {
+  .register-box h1 {
     font-size: 2rem; /* Increased font size to 2.5rem */
   }
   
-  .login-box label {
+  .register-box label {
     display: block;
     font-size: 1.5rem; /* Increased font size to 1.5rem */
     font-weight: bold;
@@ -87,18 +86,22 @@ body {
     padding-bottom: 10%;
   }
 
-  .login-box button {
+  .register-box button {
     margin-bottom: 0.5rem;
     margin-right: 2rem;
   }
   
-  .login-box button:last-child {
+  .register-box button:last-child {
     margin-top: rem;
   }
 
-select#weekday {
-  margin-bottom: 1rem;
-}
+  select {
+    padding: 10px 15px;
+    border: 1px solid #ccc; 
+    border-radius: 10px; /* Rounded corners */
+    background-color: white;
+    outline: none; 
+  }
 
 #time {
   margin-top: 0%;
