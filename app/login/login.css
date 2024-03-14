@@ -1,16 +1,15 @@
   body {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
     background-color: #f9f9f9;
     margin: 0;
     padding: 0;
   }
   
   header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 1.25rem; 
-    text-align: center;
-    margin-bottom: 1.25rem; 
+    background-color:rgba(130, 168, 236, 0.459); 
+    color: rgb(19, 18, 18);
+    padding: 20px 0;
+    text-align: center; 
   }
 
   header h1 {
@@ -26,10 +25,11 @@
     align-items: center;
     justify-content: center;
     box-sizing: border-box; /* Added this property */
-    padding-left: 40px;
-    width: 40%;
-    height: 700px;
-    margin-top: 100px;
+    padding-left: 5px;
+    padding-bottom: 20px;
+    width: 80%;
+    height: 350px;
+    margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -38,7 +38,7 @@
   .login-box form {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 90%;
   }
   
   .login-box input[type="email"],
@@ -52,22 +52,16 @@
   }
   
   .login-box button[type="submit"] {
-    background-color: #4CAF50;
+    padding: 10px 20px;
+    margin: 0 5px;
     border: none;
-    color: white;
+    border-radius: 4px;
     cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    margin-bottom: 5%;
-    text-decoration: none;
-    padding: 2%;
-    font-size: 1.5rem; 
+    font-weight: bold; 
+    background-color: #1d9812; 
+    color: white;
   }
   
-  .login-box button[type="submit"]:hover {
-    background-color: rgba(0, 153, 255, 0.801);
-    color: white;
-  }
 
   fieldset {
     border: none;
@@ -90,8 +84,8 @@
   }
 
   .sign {
-   padding-top: 15%;
-   padding-bottom: 15%;
+   padding-top: 5%;
+   padding-bottom: 5%;
   }
 
   .login-box button {
@@ -99,6 +93,3 @@
     margin-right: 3rem;
   }
   
-  .login-box button:last-child {
-    margin-top: 0.5rem;
-  }
