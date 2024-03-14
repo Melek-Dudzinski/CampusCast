@@ -1,7 +1,36 @@
-import Image from 'next/image'
+'use client';
 import './navbar.css'
+import {useRef} from 'react';
 
 export default function Navbar() {
+    const inputRef = useRef(null)
+    const inputRef2 = useRef(null)
+    const inputRef3 = useRef(null)
+    const inputRef4 = useRef(null)
+    var check = false
+
+    function Enlarge(){
+        if (check === false){
+            inputRef.current.style.scale="1.3"
+            inputRef.current.style.border="solid 1px black"
+            check = true
+        }
+        else{
+            inputRef.current.style.scale=null
+            check = false
+        }
+        Lower()
+    }
+    function Lower(){
+        if (check === true){
+            inputRef2.current.style.position="relative"
+            inputRef2.current.style.top="10px"
+        }
+        else{
+            inputRef2.current.style.position=null
+            inputRef2.current.style.top=null
+        }
+    }
     return (
         <>
             <header>
@@ -9,27 +38,19 @@ export default function Navbar() {
             </header>
             <nav>
                 <figure>
-                    <button id="personal" type="button">
-                        <img src="/personal.png" width="100" height="100" alt="Personal"/>
-                    </button>
-                    <figcaption>Personal</figcaption>
+                    <input ref={inputRef} onClick={Enlarge} id="personal" type="image" src="/personal.png"/>
+                    <figcaption ref={inputRef2}>Personal</figcaption>
                 </figure>
                 <figure>
-                    <button id="university" type="button">
-                        <img src="/university.png" width="100" height="100" alt="University"/>
-                    </button>
+                    <input id="university" type="image" src="/university.png"/>
                     <figcaption>University</figcaption>
                 </figure>
                 <figure>
-                    <button id="house" type="button">
-                        <img src="/home.png" width="100" height="100" alt="Home"/>
-                    </button>
+                    <input id="house" type="image" src="/home.png"/>
                     <figcaption>Home</figcaption>
                 </figure>
                 <figure id="fig">
-                    <button id="search" type="button">
-                        <img id="magnifier" src="/search.png" width="100" height="100" alt="Search"/>
-                    </button>
+                    <input id="search" type="image" src="/search.png"/>
                     <figcaption>Search</figcaption>
                 </figure>               
             </nav>

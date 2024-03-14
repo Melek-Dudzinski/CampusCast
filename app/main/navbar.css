@@ -4,22 +4,12 @@
     padding: 0.5%;
   }
   
-  nav img {
+  nav input {
     width: 25%;
-    height: 25%;
+    margin-left: 38%;
     border-radius: 10em;
     border: solid 1px rgb(255, 255, 255);
-  }
-
-  nav button{
-    border-radius: 10em;
-    border:transparent;
-    background-color: transparent;
-  }
-
-  nav button:hover{
-    transition-duration: 0.2s;
-    transform:scale(1.15);
+    transition-duration: 0.3s;
   }
 
   figure figcaption{
