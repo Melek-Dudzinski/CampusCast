@@ -1,24 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
-
-*{
-  font-family: "Red Hat Display", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: normal;
-  font-style: normal;
-}
-
-body {
-    background: rgba(130, 168, 236, 0.459);
-}
-  
-header {
-  text-align: center;
-  padding: 2.5%;
-  padding-top: 2em;
-  margin-bottom: 1em;
-}
-  
-.weather-container {
+ .weather-container {
   display: flex;
   flex-direction: column;
   align-items: center;
