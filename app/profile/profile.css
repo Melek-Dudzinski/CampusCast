@@ -7,30 +7,30 @@
   
   body, button, input, textarea {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+    background: rgba(130, 168, 236, 0.459);
   }
   
   /* Header Styles */
   header {
-    background-color:rgba(130, 168, 236, 0.459); 
-    color: rgb(19, 18, 18);
+    color: rgb(0, 0, 0);
     padding: 20px 0;
     text-align: center;
   }
   
   h1 {
     margin: 0;
-    font-size: 1.5em; 
+    font-size: 2em; 
   }
   
-  /* Register Box Styles */
-  .register-box {
+  /* Profile Box Styles */
+  .profile-settings-box {
     padding: 20px;
     margin: 20px;
-    background-color: rgba(130, 168, 236, 0.459); 
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%); 
     border-radius: 10px; 
   }
   
-  .register-box form {
+  .profile-settings-box form {
     display: grid;
     grid-gap: 20px; 
   }
@@ -38,6 +38,24 @@
   fieldset {
     border: none;
     margin: 0 0 20px;
+  }
+
+  section{
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,10);
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+  
+  legend {
+    padding: 0 5px;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
   }
   
   label {
@@ -71,6 +89,12 @@
     max-width: 200px;
   }
   
+  small {
+    display: block;
+    margin-bottom: 10px;
+    color: #95a5a6; 
+  }
+  
   .form-actions {
     text-align: right;
   }
@@ -88,24 +112,10 @@
     background-color: #1d9812; 
     color: white;
   }
-  
-  #cancel {
-    background-color: #95a5a6; 
+
+  button[type="submit"]:hover {
+    background-color:rgba(30, 153, 235, 0.801); 
+    color: white;
   }
-  
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .profile-settings-box {
-      margin: 10px;
-    }
-  
-    .form-actions {
-      text-align: center;
-    }
-  
-    button {
-      width: 100%;
-      margin-top: 10px;
-    }
-  }
+
   
