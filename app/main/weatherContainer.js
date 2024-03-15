@@ -22,21 +22,27 @@ const Weather = () => {
     }
   };
 
-  //need the date object with the variable name date
+  //Need the date object with the variable name date exported
+  //To get current date would do: var date = new Date()
+  //To get a specific time would need to calculate how far from that time you are using variables
+
   // Extract hours and minutes from the Date object
-  const hours = date.getHours();
-  const minutes = date.getMinutes();
-  if (hours >= 12) {
-    // Convert to 12-hour format and set period to "PM"
-    period = "PM";
-    hours = hours === 12 ? 12 : hours - 12;
-  } else {
+  let hours = date.getHours();
+  let minutes = date.getMinutes().padStart(2, "0")
+  let period = ""
+  if (hours < 12) {
     // Set period to "AM"
     period = "AM";
     // If hours is 0 (midnight), set it to 12
-    hours = hours === 0 ? 12 : hours;
+    if (hours === 0) {
+      hours = 12
+    }
+  } else {
+    // Convert to 12-hour format and set period to "PM"
+    period = "PM";
+    hours = hours - 12;
   }
-  const formattedTime = `${hours}:${minutes < 10 ? "0" + minutes : minutes} ${period}`;
+  const formattedTime = hours + ":" + minutes + period;
 
 
   useEffect(() => {
