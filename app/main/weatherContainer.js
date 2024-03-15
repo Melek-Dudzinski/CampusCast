@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './weather.css'
 
-const Weather = () => {
+
+export default function WeatherContainer({Title}) {
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState(null);
 
@@ -18,14 +19,12 @@ const Weather = () => {
     } catch (error) {
       console.error(error);
     }
+
+    useEffect(() => {
+      fetchData();
+    }, []);
   };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-};
-
-export default function WeatherContainer({Title}) {
   //Need the date object with the variable name date exported
   var date = new Date()
   //To get a specific time would need to calculate how far from that time you are using variables
@@ -47,9 +46,23 @@ export default function WeatherContainer({Title}) {
     hours = hours - 12;
   }
   const formattedTime = hours + ":" + minutes + period;
+  
+  const handleInputChange = (e) => {
+    setCity(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetchData();
+  };
 
   return (
     <>
+    <form onSubmit={handleSubmit}>
+    <input type="text" placeholder="Enter city name" value={city} onChange={handleInputChange}/>
+    <button type="submit">Get Weather</button>
+    </form>
+    {weatherData ? (
       <div class="weather-box">
         <h3 id="titles">{Title}</h3>
         <div class="weather">
@@ -69,6 +82,9 @@ export default function WeatherContainer({Title}) {
           </ul>
         </div>
       </div>
+      ) : (
+        <p>Loading</p>
+      )}
     </>
   )
 }

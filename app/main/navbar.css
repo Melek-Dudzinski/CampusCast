@@ -6,9 +6,9 @@
   
   nav input {
     width: 60%;
-    margin-left: 22%;
+    margin-left: 20%;
     border-radius: 10em;
-    border: solid 1px rgb(255, 255, 255);
+    border: solid 1px rgb(0, 0, 0);
     transition-duration: 0.3s;
   }
 
