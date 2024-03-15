@@ -62,8 +62,10 @@ export default function Navbar() {
             </header>
             <nav>
                 <figure>
-                    <input id="personal" type="image" src="/personal.png"/>
-                    <figcaption>Personal</figcaption>
+                    <a href="profile">
+                        <input id="personal" type="image" src="/personal.png"/>
+                    </a>
+                    <figcaption>Profile</figcaption>
                 </figure>
                 <figure>
                     <input ref={uni} onClick={()=>Enlarge(uni, uniCaption)} id="university" type="image" src="/university.png"/>

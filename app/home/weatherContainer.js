@@ -19,10 +19,6 @@ export default function WeatherContainer({Title}) {
     } catch (error) {
       console.error(error);
     }
-
-    useEffect(() => {
-      fetchData();
-    }, []);
   };
 
   //Need the date object with the variable name date exported
@@ -46,6 +42,10 @@ export default function WeatherContainer({Title}) {
     hours = hours - 12;
   }
   const formattedTime = hours + ":" + minutes + period;
+  
+  useEffect(() => {
+    fetchData();
+  }, []);
   
   const handleInputChange = (e) => {
     setCity(e.target.value);
