@@ -1,8 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
-import Image from 'next/image'
 import './weather.css'
 
 const Weather = () => {
@@ -22,13 +20,19 @@ const Weather = () => {
     }
   };
 
+  useEffect(() => {
+    fetchData();
+  }, []);
+};
+
+export default function WeatherContainer({Title}) {
   //Need the date object with the variable name date exported
-  //To get current date would do: var date = new Date()
+  var date = new Date()
   //To get a specific time would need to calculate how far from that time you are using variables
 
   // Extract hours and minutes from the Date object
   let hours = date.getHours();
-  let minutes = date.getMinutes().padStart(2, "0")
+  let minutes = String(date.getMinutes()).padStart(2, "0")
   let period = ""
   if (hours < 12) {
     // Set period to "AM"
@@ -44,43 +48,27 @@ const Weather = () => {
   }
   const formattedTime = hours + ":" + minutes + period;
 
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const handleInputChange = (e) => {
-    setCity(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    fetchData();
-  };
-};
-
-export default function WeatherContainer({Title}) {
-    return (
-        <>
-          <div class="weather-box">
-            <h3 id="titles">{Title}</h3>
-            <div class="weather">
-              <ul class="elements">
-                <li id="time">
-                  Time: {formattedTime}<img src="/time.png" width="32" height="32" alt="Time symbol"/>
-                </li>
-                <li id="temperature">
-                  Temperature: {weatherData.main.temp}°C<img src="/temperature.png" id="temp" width="32" height="32" alt="Temperature symbol"/>
-                </li>
-                <li id="wind">
-                  Wind: {weatherData.wind.speed}m/s<img src="/wind.png" id="wind" width="32" height="32" alt="Wind symbol"/>
-                </li>
-                <li id="humidity">
-                  Humidity: {weatherData.main.humidity}%<img src="/humidity.png" id="humidity" width="32" height="32" alt="Humidity symbol"/>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </>
-    )
+  return (
+    <>
+      <div class="weather-box">
+        <h3 id="titles">{Title}</h3>
+        <div class="weather">
+          <ul class="elements">
+            <li id="time">
+              Time: {formattedTime}<img src="/time.png" width="32" height="32" alt="Time symbol"/>
+            </li>
+            <li id="temperature">
+              Temperature: {weatherData.main.temp}°C<img src="/temperature.png" id="temp" width="32" height="32" alt="Temperature symbol"/>
+            </li>
+            <li id="wind">
+              Wind: {weatherData.wind.speed}m/s<img src="/wind.png" id="wind" width="32" height="32" alt="Wind symbol"/>
+            </li>
+            <li id="humidity">
+              Humidity: {weatherData.main.humidity}%<img src="/humidity.png" id="humidity" width="32" height="32" alt="Humidity symbol"/>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </>
+  )
 }
