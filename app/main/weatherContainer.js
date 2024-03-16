@@ -28,7 +28,6 @@ const Weather = () => {
   //To get a specific time would need to calculate how far from that time you are using variables
 
   useEffect(() => {
-    const date = new Date();
     let hours = date.getHours();
     let minutes = date.getMinutes().toString().padStart(2, "0");
     let period = "";
@@ -62,7 +61,7 @@ const Weather = () => {
   };
 };
 
-export default function WeatherContainer({Title}) {
+export default function WeatherContainer({ Title, formattedTime}) {
     return (
         <>
           <div class="weather-box">
