@@ -1,14 +1,13 @@
-r
 'use client'
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+
 import Image from 'next/image'
 import './weather.css'
 
 const Weather = () => {
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState(null);
-  const [formattedTime, setFormattedTime] = useState('');
 
   const fetchData = async () => {
     try {
@@ -27,26 +26,24 @@ const Weather = () => {
   //To get current date would do: var date = new Date()
   //To get a specific time would need to calculate how far from that time you are using variables
 
-  useEffect(() => {
-    const date = new Date();
-    let hours = date.getHours();
-    let minutes = date.getMinutes().toString().padStart(2, "0");
-    let period = "";
-    if (hours < 12) {
-      // Set period to "AM"
-      period = "AM";
-      // If hours is 0 (midnight), set it to 12
-      if (hours === 0) {
-        hours = 12;
-      }
-    } else {
-      // Convert to 12-hour format and set period to "PM"
-      period = "PM";
-      hours = hours - 12;
+  // Extract hours and minutes from the Date object
+  let hours = date.getHours();
+  let minutes = date.getMinutes().padStart(2, "0")
+  let period = ""
+  if (hours < 12) {
+    // Set period to "AM"
+    period = "AM";
+    // If hours is 0 (midnight), set it to 12
+    if (hours === 0) {
+      hours = 12
     }
-    const newFormattedTime = hours + ":" + minutes + period;
-    setFormattedTime(newFormattedTime);
-  }, []);
+  } else {
+    // Convert to 12-hour format and set period to "PM"
+    period = "PM";
+    hours = hours - 12;
+  }
+  const formattedTime = hours + ":" + minutes + period;
+
 
   useEffect(() => {
     fetchData();
