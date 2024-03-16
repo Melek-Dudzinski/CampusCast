@@ -8,6 +8,7 @@ import Weekly from './weekly.js'
 export default function Main() {
   return (
     <>
+      <title>Home page</title>
       <Navbar />
       <div class="weather-container">
         <h2>Location</h2>

@@ -3,6 +3,7 @@ import './register.css'
 export default function Register() {
     return (
         <>
+        <title>Register</title>
         <header>
             <h1>CampusCast Registration</h1>
         </header>
