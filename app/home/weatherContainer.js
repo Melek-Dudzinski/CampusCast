@@ -15,7 +15,6 @@ export default function WeatherContainer({Title}) {
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&dt=${date}&appid=${MY_API_KEY}`
       );
       setWeatherData(response.data);
-      console.log(response.data); //You can see all the weather data in console log
     } catch (error) {
       console.error(error);
     }
@@ -58,33 +57,33 @@ export default function WeatherContainer({Title}) {
 
   return (
     <>
-    <form onSubmit={handleSubmit}>
-    <input type="text" placeholder="Enter city name" value={city} onChange={handleInputChange}/>
-    <button type="submit">Get Weather</button>
-    </form>
-    {weatherData ? (
-      <div class="weather-box">
-        <h3 id="titles">{Title}</h3>
-        <div class="weather">
-          <ul class="elements">
-            <li id="time">
-              Time: {formattedTime}<img src="/time.png" width="32" height="32" alt="Time symbol"/>
-            </li>
-            <li id="temperature">
-              Temperature: {weatherData.main.temp}°C<img src="/temperature.png" id="temp" width="32" height="32" alt="Temperature symbol"/>
-            </li>
-            <li id="wind">
-              Wind: {weatherData.wind.speed}m/s<img src="/wind.png" id="wind" width="32" height="32" alt="Wind symbol"/>
-            </li>
-            <li id="humidity">
-              Humidity: {weatherData.main.humidity}%<img src="/humidity.png" id="humidity" width="32" height="32" alt="Humidity symbol"/>
-            </li>
-          </ul>
+      <form onSubmit={handleSubmit}>
+      <input type="text" placeholder="Enter city name" value={city} onChange={handleInputChange}/>
+      <button type="submit">Get Weather</button>
+      </form>
+      {weatherData ? (
+        <div class="weather-box">
+          <h3 id="titles">{Title}</h3>
+          <div class="weather">
+            <ul class="elements">
+              <li id="time">
+                Time: {formattedTime}<img src="/time.png" width="32" height="32" alt="Time symbol"/>
+              </li>
+              <li id="temperature">
+                Temperature: {weatherData.main.temp}°C<img src="/temperature.png" id="temp" width="32" height="32" alt="Temperature symbol"/>
+              </li>
+              <li id="wind">
+                Wind: {weatherData.wind.speed}m/s<img src="/wind.png" id="wind" width="32" height="32" alt="Wind symbol"/>
+              </li>
+              <li id="humidity">
+                Humidity: {weatherData.main.humidity}%<img src="/humidity.png" id="humidity" width="32" height="32" alt="Humidity symbol"/>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-      ) : (
-        <p>Loading</p>
-      )}
+        ) : (
+          <p>Loading</p>
+        )}
     </>
   )
 }

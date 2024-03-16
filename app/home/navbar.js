@@ -1,57 +1,41 @@
 'use client';
 import './navbar.css'
-import {useRef} from 'react';
+import {useRef, useState} from 'react';
 
 export default function Navbar() {
     const uni = useRef(null)
     const uniCaption = useRef(null)
     const home = useRef(null)
     const homeCaption = useRef(null)
-    var uniToggle = false
-    var homeToggle = false
+    var uniToggle = true
 
-    function Enlarge(state, capState){
-        if (uniToggle === false && homeToggle===false){
-            if (state===uni){
-                uni.current.style.scale="1.4"
-                uniToggle = true
-            }
-            else{
-                home.current.style.scale="1.4"
-                homeToggle = true
-            }
-        }
-        else if (uniToggle===true && state===home){
-            uni.current.style.scale=null
-            uniToggle=false
-            home.current.style.scale="1.4"
-            homeToggle = true
-        }
-        else if (homeToggle===true && state===uni){
+    function Enlarge(button){
+        if (button===uni){
             home.current.style.scale=null
-            homeToggle=false
-            uni.current.style.scale="1.4"
-            uniToggle = true
+            homeCaption.current.style.top=null
+            homeCaption.current.style.fontWeight=null
+            uniToggle=true
         }
+        else{
+            uni.current.style.scale=1
+            uniCaption.current.style.top="0px"
+            uniCaption.current.style.fontWeight="normal"
+            uniToggle=false
+        }
+        button.current.style.scale="1.4"
         Lower()
     }
 
     function Lower(){
-        if (uniToggle === true && homeToggle===false){
+        if (uniToggle===true){
             uniCaption.current.style.position="relative"
             uniCaption.current.style.top="10px"
             uniCaption.current.style.fontWeight = "bold"
-            homeCaption.current.style.fontWeight = null
-            homeCaption.current.style.position=null
-            homeCaption.current.style.top=null
         }
-        else if (uniToggle === false && homeToggle===true){
+        else{
             homeCaption.current.style.position="relative"
             homeCaption.current.style.top="10px"
             homeCaption.current.style.fontWeight = "bold"
-            uniCaption.current.style.fontWeight = null
-            uniCaption.current.style.position=null
-            uniCaption.current.style.top=null
         }
     }
 
@@ -68,11 +52,11 @@ export default function Navbar() {
                     <figcaption>Profile</figcaption>
                 </figure>
                 <figure>
-                    <input ref={uni} onClick={()=>Enlarge(uni, uniCaption)} id="university" type="image" src="/university.png"/>
-                    <figcaption ref={uniCaption}>University</figcaption>
+                    <input ref={uni} onClick={()=>Enlarge(uni)} id="university" type="image" src="/university.png"/>
+                    <figcaption ref={uniCaption} id="uniCaption">University</figcaption>
                 </figure>
                 <figure>
-                    <input ref={home} onClick={()=>Enlarge(home, homeCaption)} id="house" type="image" src="/home.png"/>
+                    <input ref={home} onClick={()=>Enlarge(home)} id="house" type="image" src="/home.png"/>
                     <figcaption ref={homeCaption}>Home</figcaption>
                 </figure>
                 <figure id="fig">

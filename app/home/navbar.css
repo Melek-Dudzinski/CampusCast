@@ -17,3 +17,13 @@
     font-weight:normal;
     font-size:90%;
   }
+
+  #university{
+    scale:1.4;
+  }
+
+  #uniCaption{
+    position:relative;
+    top:10px;
+    font-weight:bold;
+  }
