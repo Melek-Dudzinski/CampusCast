@@ -1,0 +1,40 @@
+  nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5%;
+  }
+  
+  nav input {
+    width: 60%;
+    margin-left: 20%;
+    border-radius: 10em;
+    border: solid 1px rgb(0, 0, 0);
+    transition-duration: 0.3s;
+  }
+
+  figure figcaption{
+    text-align: center;
+    font-weight:normal;
+    font-size:90%;
+  }
+
+  #university{
+    scale:1.4;
+  }
+
+  #uniCaption{
+    position:relative;
+    top:10px;
+    font-weight:bold;
+  }
+
+  #searchBar{
+    font-size: 1em;
+    padding:0.6em;
+    margin-top:2em;
+    margin-left: 1em;
+    border:transparent;
+    border-radius: 1em;
+    width:92%;
+    visibility: hidden;
+  }
