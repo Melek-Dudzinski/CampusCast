@@ -4,7 +4,8 @@ import axios from 'axios';
 import './weather.css'
 
 
-export default function WeatherContainer({Title}) {
+export default function WeatherContainer({Title, uniToggle}) {
+  
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState(null);
 
@@ -18,6 +19,7 @@ export default function WeatherContainer({Title}) {
     } catch (error) {
       console.error(error);
     }
+    console.log(uniToggle)
   };
 
   //Need the date object with the variable name date exported

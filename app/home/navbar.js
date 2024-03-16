@@ -1,27 +1,30 @@
 'use client';
 import './navbar.css'
-import {useRef} from 'react';
+import React, {useRef, useEffect} from 'react';
 
-export default function Navbar() {
+export default function Navbar({uniToggle, setUniToggle}) {
     const uni = useRef(null)
     const uniCaption = useRef(null)
     const home = useRef(null)
     const homeCaption = useRef(null)
-    var uniToggle = true
+    
+    useEffect(() => {
+        if (uniToggle===true){
+            enlarge(uni)}
+        else if (uniToggle===false){
+            enlarge(home)}
+    }, [uniToggle])
 
     function enlarge(button){
         contract()
         if (button===uni){
             home.current.style.scale=null
             homeCaption.current.style.top=null
-            homeCaption.current.style.fontWeight=null
-            uniToggle=true
-        }
+            homeCaption.current.style.fontWeight=null        }
         else{
             uni.current.style.scale=1
             uniCaption.current.style.top="0px"
             uniCaption.current.style.fontWeight="normal"
-            uniToggle=false
         }
         button.current.style.scale="1.4"
         lower()
@@ -68,11 +71,11 @@ export default function Navbar() {
                     <figcaption>Profile</figcaption>
                 </figure>
                 <figure>
-                    <input ref={uni} onClick={()=>enlarge(uni)} id="university" type="image" src="/university.png"/>
+                    <input ref={uni} onClick={()=>setUniToggle(true)} id="university" type="image" src="/university.png"/>
                     <figcaption ref={uniCaption} id="uniCaption">University</figcaption>
                 </figure>
                 <figure>
-                    <input ref={home} onClick={()=>enlarge(home)} id="house" type="image" src="/home.png"/>
+                    <input ref={home} onClick={()=>setUniToggle(false)} id="house" type="image" src="/home.png"/>
                     <figcaption ref={homeCaption}>Home</figcaption>
                 </figure>
                 <figure id="fig">
