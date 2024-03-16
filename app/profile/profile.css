@@ -7,12 +7,12 @@
   
   body, button, input, textarea {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+    background: rgba(130, 168, 236, 0.459);
   }
   
   /* Header Styles */
   header {
-    background-color: #3498db; 
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 20px 0;
     text-align: center;
   }
@@ -26,24 +26,33 @@
   .profile-settings-box {
     padding: 20px;
     margin: 20px;
-    background-color: #ecf0f1; 
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%); 
     border-radius: 10px; 
   }
   
-  form {
-    background: #fff;
-    border-radius: 10px; 
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  .profile-settings-box form {
+    display: grid;
+    grid-gap: 20px; 
   }
   
   fieldset {
     border: none;
     margin: 0 0 20px;
   }
+
+  section{
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,10);
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
   
   legend {
-    font-size: 1.2em;
+    padding: 0 5px;
+    font-size: 1.5em;
     margin-bottom: 10px;
     color: #333;
     font-weight: bold;
@@ -51,8 +60,17 @@
   
   label {
     display: block;
+    font-size: 1.0em;
     margin: 10px 0 5px;
     color: #2c3e50; 
+  }
+
+  select {
+    padding: 10px 15px;
+    border: 1px solid #ccc; 
+    border-radius: 10px; /* Rounded corners */
+    background-color: white;
+    outline: none; 
   }
   
   input[type="text"],
@@ -91,27 +109,13 @@
   }
   
   button[type="submit"] {
-    background-color: #3498db; 
+    background-color: #1d9812; 
     color: white;
   }
-  
-  #cancel {
-    background-color: #95a5a6; 
+
+  button[type="submit"]:hover {
+    background-color:rgba(30, 153, 235, 0.801); 
+    color: white;
   }
-  
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .profile-settings-box {
-      margin: 10px;
-    }
-  
-    .form-actions {
-      text-align: center;
-    }
-  
-    button {
-      width: 100%;
-      margin-top: 10px;
-    }
-  }
+
   
