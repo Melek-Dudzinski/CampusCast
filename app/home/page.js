@@ -1,4 +1,4 @@
-import './main.css'
+import './home.css'
 import Navbar from './navbar.js'
 import WeatherContainer from './weatherContainer.js'
 import SunRiseSet from './sunRiseSet.js'
@@ -8,6 +8,7 @@ import Weekly from './weekly.js'
 export default function Main() {
   return (
     <>
+      <title>Home page</title>
       <Navbar />
       <div class="weather-container">
         <h2>Location</h2>
