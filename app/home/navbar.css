@@ -27,3 +27,14 @@
     top:10px;
     font-weight:bold;
   }
+
+  #searchBar{
+    font-size: 1em;
+    padding:0.6em;
+    margin-top:2em;
+    margin-left: 1em;
+    border:transparent;
+    border-radius: 1em;
+    width:92%;
+    visibility: hidden;
+  }

@@ -6,4 +6,5 @@
     height: 18.75rem; /* Changed to 18.75rem (18.75rem = 300px / 16px) */
     background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
     border-radius: 2.1875rem; /* Changed to 2.1875rem (2.1875rem = 35px / 16px) */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   }
