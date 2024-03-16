@@ -13,17 +13,20 @@ export default function Navbar() {
         contract()
         if (button===uni){
             home.current.style.scale=null
+            home.current.style.border=null
             homeCaption.current.style.top=null
             homeCaption.current.style.fontWeight=null
             uniToggle=true
         }
         else{
             uni.current.style.scale=1
+            uni.current.style.border=null
             uniCaption.current.style.top="0px"
             uniCaption.current.style.fontWeight="normal"
             uniToggle=false
         }
         button.current.style.scale="1.4"
+        button.current.style.border="solid 2px black"
         lower()
     }
 
