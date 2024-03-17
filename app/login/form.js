@@ -18,7 +18,7 @@ export default function Form() {
                     {/* <!-- Use "minlength" to specify the minimum number of characters required for the password --> */}
                     </section> 
                     <button type="submit">
-                        <a href="main">Log In</a>
+                        <a href="home">Log In</a>
                     </button>
                     <button type="submit">
                         <a href="/">Back</a>
