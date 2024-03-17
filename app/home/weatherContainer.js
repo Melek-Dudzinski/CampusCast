@@ -5,7 +5,7 @@ import './weather.css'
 import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 
 
-export default function WeatherContainer({Title, locationSelected, times, uniLocation, homeLocation, at}) {
+export default function WeatherContainer({Title, locationSelected, times, uniLocation, homeLocation, at, to}) {
   var currentTime = {}
   var loc = {}
 
@@ -61,9 +61,9 @@ export default function WeatherContainer({Title, locationSelected, times, uniLoc
       }
       currentTime = hours + ":" + minutes + period;
   } else if (city === uniLocation) {
-    currentTime = times[1]
-  } else if (city === homeLocation) {
     currentTime = times[0]
+  } else if (city === homeLocation) {
+    currentTime = times[1]
   }
 
   var newDate = new Date();
@@ -84,16 +84,12 @@ export default function WeatherContainer({Title, locationSelected, times, uniLoc
 
   useEffect(() => {
     if (typeof city !== 'undefined'){
-      if (at) {
-        if (locationSelected == uniLocation) {
-          setCity(homeLocation)
-        } else {
-          setCity(uniLocation)}
-        }
-      } else if (typeof times === "boolean") {
-        setCity("Poland")
-      } else {
+      if (to) {
         setCity(locationSelected)
+      } else if (at) {
+        setCity(loc)
+      } else {
+        setCity("Arctic")}
       }
       fetchData();
   });
