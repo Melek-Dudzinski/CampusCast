@@ -28,13 +28,13 @@ export default function WeatherContainer({Title, locationSelected, times, uniLoc
     loc = ""
   } else {
     if (at) {
-      loc = locationSelected
-    } else {
       if (locationSelected === uniLocation) {
         loc = homeLocation
       } else {
         loc = uniLocation
       }
+    } else {
+      loc = locationSelected
     }
   }
 
