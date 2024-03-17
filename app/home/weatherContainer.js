@@ -5,8 +5,9 @@ import './weather.css'
 import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 
 
-export default function WeatherContainer({Title, locationSelected, times, uniLocation, homeLocation}) {
+export default function WeatherContainer({Title, locationSelected, times, uniLocation, homeLocation, at}) {
   var currentTime = {}
+  var loc = {}
 
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState(null);
@@ -23,6 +24,20 @@ export default function WeatherContainer({Title, locationSelected, times, uniLoc
     }
   };
   
+  if (typeof times === "boolean") {
+    loc = ""
+  } else {
+    if (at) {
+      loc = locationSelected
+    } else {
+      if (locationSelected === uniLocation) {
+        loc = homeLocation
+      } else {
+        loc = uniLocation
+      }
+    }
+  }
+
   if (typeof times === "boolean") {
       //Need the date object with the variable name date exported
       var date = new Date()
@@ -65,7 +80,7 @@ export default function WeatherContainer({Title, locationSelected, times, uniLoc
       </form> */}
       {weatherData ? (
         <div class="weather-box">
-          <h3 id="titles">{Title}</h3>
+          <h3 id="titles">{Title + loc}</h3>
           <div class="weather">
             <ul class="elements">
               <li id="time">
