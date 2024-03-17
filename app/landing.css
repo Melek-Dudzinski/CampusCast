@@ -29,3 +29,7 @@ button:hover{
     transform: translateY(-9px);
     box-shadow: 0em 0.3em 0em 0em rgb(44, 44, 44);
 }
+p{
+    text-align:center;
+    margin:2em 20px 2em 20px;
+}
