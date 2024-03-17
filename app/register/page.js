@@ -13,7 +13,7 @@ export default function Register() {
                     <hgroup>
                         <h1>Register</h1><br></br>
                     </hgroup>
-                        
+                    <section>    
                     <label for="username">Email</label>
                     <input type="email" id="username" name="username" required/>
                     {/* <!-- Use type="email" for email validation and "required" to make the field mandatory --> */}
@@ -21,7 +21,8 @@ export default function Register() {
                     <label for="password">Password:</label>
                     <input type="password" id="password" name="password" minlength="8" required/>
                     {/* <!-- Use "minlength" to specify the minimum number of characters required for the password --> */}
-                    
+                    </section>
+                    <section>
                     <label for="weekday">Weekday:</label>
                         <select id="weekday" name="weekday" required>
                             <option value="">Select a weekday</option>
@@ -37,7 +38,7 @@ export default function Register() {
                            
                     <label htmlFor="leave-time">Leave time:</label>
                     <input type="time" id="time" name="leave-time" required />
-
+                    </section>
                     <div className="form-actions">       
                         <button type="submit">
                             <a href="login">Register</a>
