@@ -79,8 +79,7 @@ export default function WeatherContainer({Title, locationSelected, times, uniLoc
     currentTime = "0" + currentTime
   }
   var min = currentTime.toString().slice(0, -3).slice(3)
-  newDate.setUTCHours(hour)
-  newDate.setUTCMinutes(min)
+
 
   useEffect(() => {
     if (typeof city !== 'undefined'){
@@ -91,6 +90,8 @@ export default function WeatherContainer({Title, locationSelected, times, uniLoc
       } else {
         setCity("Arctic")}
       }
+      newDate.setUTCHours(hour)
+      newDate.setUTCMinutes(min)
       fetchData();
   });
 
@@ -109,7 +110,7 @@ export default function WeatherContainer({Title, locationSelected, times, uniLoc
     "<br>Longitude: " + position.coords.longitude)
   }
 
-  getLocation()
+  // getLocation()
 
   return (
     <>

@@ -20,7 +20,7 @@ export default function SunRiseSet({locationSelected}) {
 
     useEffect(() => {
           fetchData();
-      });
+      }, [locationSelected]);
 
     return (
         <>
