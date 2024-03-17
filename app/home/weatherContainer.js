@@ -61,9 +61,9 @@ export default function WeatherContainer({Title, locationSelected, times, uniLoc
       }
       currentTime = hours + ":" + minutes + period;
   } else if (city === uniLocation) {
-    currentTime = times[0]
-  } else if (city === homeLocation) {
     currentTime = times[1]
+  } else if (city === homeLocation) {
+    currentTime = times[0]
   }
 
   var newDate = new Date();
@@ -83,10 +83,19 @@ export default function WeatherContainer({Title, locationSelected, times, uniLoc
   newDate.setUTCMinutes(min)
 
   useEffect(() => {
-    if (typeof city !== 'undefined' && city !== locationSelected){
-      setCity(locationSelected)}
+    if (typeof city !== 'undefined'){
+      if (at) {
+        if (locationSelected == uniLocation) {
+          setCity(homeLocation)
+        } else {
+          setCity(uniLocation)}
+        }
+      } else if (typeof times === "boolean") {
+        setCity("Poland")
+      } else {
+        setCity(locationSelected)
+      }
       fetchData();
-      console.log(newDate)
   });
 
   return (

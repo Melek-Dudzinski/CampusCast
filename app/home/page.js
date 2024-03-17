@@ -12,8 +12,8 @@ export default function Main() {
   var homeLocation = "Africa";
   var realTime = true;
 
-  const leaveTimes = ["8:00 AM", "6:00 AM"]
-  const arriveTimes = ["9:00 PM", "7:00 PM"]
+  const leaveTimes = ["8:00 AM", "6:00 PM"]
+  const arriveTimes = ["9:00 AM", "7:00 PM"]
 
   const [uniToggle, setUniToggle] = useState(true)
   const [locationSelected, setLocation] = useState(uniLocation)
