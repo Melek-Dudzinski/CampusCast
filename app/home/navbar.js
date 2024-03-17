@@ -20,7 +20,7 @@ export default function Navbar() {
         }
         else{
             uni.current.style.scale=1
-            uni.current.style.border=null
+            uni.current.style.border="solid 1px black"
             uniCaption.current.style.top="0px"
             uniCaption.current.style.fontWeight="normal"
             uniToggle=false
