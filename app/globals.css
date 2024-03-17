@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Meera+Inimai&family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Radio+Canada:ital,wght@0,300..700;1,300..700&display=swap');
+
+*{
+  font-family: "Radio Canada", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;

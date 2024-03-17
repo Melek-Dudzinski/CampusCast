@@ -10,7 +10,7 @@ export default function Navbar() {
     var uniToggle = true
 
     function enlarge(button){
-        contract()
+        hide()
         if (button===uni){
             home.current.style.scale=null
             home.current.style.border=null
@@ -43,17 +43,17 @@ export default function Navbar() {
         }
     }
 
-    function expand(){
+    function show(){
         let s = document.getElementById('searchBar')
         if (s.style.visibility==="visible"){
-            contract()
+            hide()
         }
         else{
             s.style.visibility="visible";
         }
     }
 
-    function contract(){
+    function hide(){
         let s = document.getElementById('searchBar')
         s.style.visibility="hidden";
     }
@@ -79,7 +79,7 @@ export default function Navbar() {
                     <figcaption ref={homeCaption}>Home</figcaption>
                 </figure>
                 <figure id="fig">
-                    <input onClick={()=>expand()} id="search" type="image" src="/search.png"/>
+                    <input onClick={()=>show()} id="search" type="image" src="/search.png"/>
                     <figcaption>Search</figcaption>
                 </figure>               
             </nav>
