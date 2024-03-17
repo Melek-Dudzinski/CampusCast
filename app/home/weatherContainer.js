@@ -61,9 +61,9 @@ export default function WeatherContainer({Title, locationSelected, times, uniLoc
       }
       currentTime = hours + ":" + minutes + period;
   } else if (city === uniLocation) {
-    currentTime = times[0]
-  } else if (city === homeLocation) {
     currentTime = times[1]
+  } else if (city === homeLocation) {
+    currentTime = times[0]
   }
 
   var newDate = new Date();
@@ -93,6 +93,23 @@ export default function WeatherContainer({Title, locationSelected, times, uniLoc
       }
       fetchData();
   });
+
+  const x = document.getElementById("demo");
+
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+      console.log("Geolocation is not supported by this browser.")
+    }
+  }
+
+  function showPosition(position) {
+    console.log( "Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude)
+  }
+
+  getLocation()
 
   return (
     <>
