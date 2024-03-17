@@ -5,7 +5,7 @@ import './weather.css'
 import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 
 
-export default function WeatherContainer({Title, locationSelected, times, uniLocation, homeLocation, at}) {
+export default function WeatherContainer({Title, locationSelected, times, uniLocation, homeLocation, at, to}) {
   var currentTime = {}
   var loc = {}
 
@@ -16,7 +16,7 @@ export default function WeatherContainer({Title, locationSelected, times, uniLoc
     try {
       const MY_API_KEY = "47587e19f823f14e08d26b63b7a1f07d"
       const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&dt=${date}&appid=${MY_API_KEY}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&dt=${newDate}&appid=${MY_API_KEY}`
       );
       setWeatherData(response.data);
     } catch (error) {
@@ -28,13 +28,13 @@ export default function WeatherContainer({Title, locationSelected, times, uniLoc
     loc = ""
   } else {
     if (at) {
-      loc = locationSelected
-    } else {
       if (locationSelected === uniLocation) {
         loc = homeLocation
       } else {
         loc = uniLocation
       }
+    } else {
+      loc = locationSelected
     }
   }
 
@@ -56,7 +56,7 @@ export default function WeatherContainer({Title, locationSelected, times, uniLoc
         }
       } else {
         // Convert to 12-hour format and set period to "PM"
-        period = "PM";
+        period = " PM";
         hours = hours - 12;
       }
       currentTime = hours + ":" + minutes + period;
@@ -66,9 +66,31 @@ export default function WeatherContainer({Title, locationSelected, times, uniLoc
     currentTime = times[1]
   }
 
+  var newDate = new Date();
+  var AMPM = currentTime.toString().slice(-2)
+  var hour = currentTime.toString().slice(0, -6)
+  if (AMPM === "PM") {
+    hour = parseInt(hour) + 12;
+  }
+  if (hour.length === 1) {
+    hour = "0" + hour
+  }
+  if (currentTime.length === 7) {
+    currentTime = "0" + currentTime
+  }
+  var min = currentTime.toString().slice(0, -3).slice(3)
+  newDate.setUTCHours(hour)
+  newDate.setUTCMinutes(min)
+
   useEffect(() => {
-    if (typeof city !== 'undefined' && city !== locationSelected){
-      setCity(locationSelected)}
+    if (typeof city !== 'undefined'){
+      if (to) {
+        setCity(locationSelected)
+      } else if (at) {
+        setCity(loc)
+      } else {
+        setCity("Arctic")}
+      }
       fetchData();
   });
 
