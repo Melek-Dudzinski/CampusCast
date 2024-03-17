@@ -15,7 +15,6 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
         else if (uniToggle===false){
             setLocation(homeLocation)
             enlarge(home)}
-        console.log("From navbar")
     }, [uniToggle])
 
     function enlarge(button){

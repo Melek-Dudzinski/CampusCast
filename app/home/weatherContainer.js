@@ -2,16 +2,18 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './weather.css'
+import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 
 
-export default function WeatherContainer({Title, uniToggle, locationSelected}) {
+export default function WeatherContainer({Title, locationSelected, times, uniLocation, homeLocation}) {
+  var currentTime = {}
 
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState(null);
 
   const fetchData = async () => {
     try {
-      const MY_API_KEY = "a21c017ec647ccb8b29b6c603b5b4a43"
+      const MY_API_KEY = "47587e19f823f14e08d26b63b7a1f07d"
       const response = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&dt=${date}&appid=${MY_API_KEY}`
       );
@@ -20,43 +22,40 @@ export default function WeatherContainer({Title, uniToggle, locationSelected}) {
       console.error(error);
     }
   };
+  
+  if (typeof times === "boolean") {
+      //Need the date object with the variable name date exported
+      var date = new Date()
+      //To get a specific time would need to calculate how far from that time you are using variables
 
-  //Need the date object with the variable name date exported
-  var date = new Date()
-  //To get a specific time would need to calculate how far from that time you are using variables
-
-  // Extract hours and minutes from the Date object
-  let hours = date.getHours();
-  let minutes = String(date.getMinutes()).padStart(2, "0")
-  let period = ""
-  if (hours < 12) {
-    // Set period to "AM"
-    period = "AM";
-    // If hours is 0 (midnight), set it to 12
-    if (hours === 0) {
-      hours = 12
-    }
-  } else {
-    // Convert to 12-hour format and set period to "PM"
-    period = "PM";
-    hours = hours - 12;
+      // Extract hours and minutes from the Date object
+      let hours = date.getHours();
+      let minutes = String(date.getMinutes()).padStart(2, "0")
+      let period = ""
+      if (hours < 12) {
+        // Set period to "AM"
+        period = "AM";
+        // If hours is 0 (midnight), set it to 12
+        if (hours === 0) {
+          hours = 12
+        }
+      } else {
+        // Convert to 12-hour format and set period to "PM"
+        period = "PM";
+        hours = hours - 12;
+      }
+      currentTime = hours + ":" + minutes + period;
+  } else if (city === uniLocation) {
+    currentTime = times[0]
+  } else if (city === homeLocation) {
+    currentTime = times[1]
   }
-  const formattedTime = hours + ":" + minutes + period;
-  
-  useEffect(() => {
-    setCity(locationSelected)
-    console.log("From weaherContainer")
-    fetchData();
-  }, [{uniToggle}]);
-  
-  // const handleInputChange = (e) => {
-  //   setCity(e.target.value);
-  // };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   fetchData();
-  // };
+  useEffect(() => {
+    if (typeof city !== 'undefined' && city !== locationSelected){
+      setCity(locationSelected)}
+      fetchData();
+  });
 
   return (
     <>
@@ -70,7 +69,7 @@ export default function WeatherContainer({Title, uniToggle, locationSelected}) {
           <div class="weather">
             <ul class="elements">
               <li id="time">
-                Time: {formattedTime}<img src="/time.png" width="32" height="32" alt="Time symbol"/>
+                Time: {currentTime}<img src="/time.png" width="32" height="32" alt="Time symbol"/>
               </li>
               <li id="temperature">
                 Temperature: {weatherData.main.temp}°C<img src="/temperature.png" id="temp" width="32" height="32" alt="Temperature symbol"/>
