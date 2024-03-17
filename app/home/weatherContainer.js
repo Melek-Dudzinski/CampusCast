@@ -4,8 +4,8 @@ import axios from 'axios';
 import './weather.css'
 
 
-export default function WeatherContainer({Title, uniToggle}) {
-  
+export default function WeatherContainer({Title, uniToggle, locationSelected}) {
+
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState(null);
 
@@ -19,7 +19,6 @@ export default function WeatherContainer({Title, uniToggle}) {
     } catch (error) {
       console.error(error);
     }
-    console.log(uniToggle)
   };
 
   //Need the date object with the variable name date exported
@@ -45,24 +44,26 @@ export default function WeatherContainer({Title, uniToggle}) {
   const formattedTime = hours + ":" + minutes + period;
   
   useEffect(() => {
+    setCity(locationSelected)
+    console.log("From weaherContainer")
     fetchData();
-  }, []);
+  }, [{uniToggle}]);
   
-  const handleInputChange = (e) => {
-    setCity(e.target.value);
-  };
+  // const handleInputChange = (e) => {
+  //   setCity(e.target.value);
+  // };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    fetchData();
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   fetchData();
+  // };
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      {/* <form onSubmit={handleSubmit}>
       <input type="text" placeholder="Enter city name" value={city} onChange={handleInputChange}/>
       <button type="submit">Get Weather</button>
-      </form>
+      </form> */}
       {weatherData ? (
         <div class="weather-box">
           <h3 id="titles">{Title}</h3>

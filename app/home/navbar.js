@@ -2,7 +2,7 @@
 import './navbar.css'
 import React, {useRef, useEffect} from 'react';
 
-export default function Navbar({uniToggle, setUniToggle}) {
+export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocation, setLocation}) {
     const uni = useRef(null)
     const uniCaption = useRef(null)
     const home = useRef(null)
@@ -10,9 +10,12 @@ export default function Navbar({uniToggle, setUniToggle}) {
     
     useEffect(() => {
         if (uniToggle===true){
+            setLocation(uniLocation)
             enlarge(uni)}
         else if (uniToggle===false){
+            setLocation(homeLocation)
             enlarge(home)}
+        console.log("From navbar")
     }, [uniToggle])
 
     function enlarge(button){
