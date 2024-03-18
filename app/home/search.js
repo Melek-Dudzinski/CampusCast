@@ -13,22 +13,21 @@ searchBar.style.left="80px"
 searchBar.style.width="80%";
 
 function expand(e){  
-    showSearchBar = true    
-    fig.appendChild(searchBar);
+  showSearchBar = true    
+  fig.appendChild(searchBar);
 }
 
 function contract(){
-    showSearchBar = false
-    fig.removeChild(searchBar);
+  showSearchBar = false
+  fig.removeChild(searchBar);
 }
 
 function toggleSearch(){
-    if(showSearchBar==false){
-        expand()
-    }
-    else{
-        contract()
-    }
+  if(showSearchBar==false){
+    expand()
+  } else{
+    contract()
+  }
 }
 
 let searchButton = document.getElementById('search');

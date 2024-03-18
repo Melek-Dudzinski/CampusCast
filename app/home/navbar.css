@@ -39,3 +39,7 @@
     width:92%;
     visibility: hidden;
   }
+  
+  #searchBar:hover{
+    transition-duration: 0.4s;
+  }
