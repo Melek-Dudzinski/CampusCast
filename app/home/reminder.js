@@ -36,7 +36,7 @@ export default function Remainder({locationSelected}) {
   const descLower = desc.toLowerCase();
   if (main.indexOf("Rain") !== -1|| main.indexOf("Drizzle") !== -1) {
     reminders.push("Rain likely later, plan your commute accordingly.")
-  } else if (descLower.indexOf("rain") !== 1 || descLower.indexOf("shower") !== 1) {
+  } else if (descLower.indexOf("rain") !== -1 || descLower.indexOf("shower") !== -1) {
     reminders.push("Don't forget your umbrella! Rain is expected today.")
   } else if (descLower.indexOf("sleet") !== -1 || descLower.indexOf("hail") !== -1) {
     reminders.push("Rain likely later, plan your commute accordingly.")
