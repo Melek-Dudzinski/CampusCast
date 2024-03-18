@@ -1,6 +1,16 @@
+'use client';
 import './register.css'
+import React, { useState } from 'react';
+import Link from 'next/link';
 
 export default function Register() {
+
+  const [myName, setName] = useState("Real Name");
+
+  const handleInputChange = (event) => {
+    setName(event.target.value);
+  };
+
   return (
     <>
       <title>Register</title>
@@ -16,12 +26,14 @@ export default function Register() {
 
             <section>    
               <label for="username">Email</label>
-                <input type="email" id="username" name="username" required/>
+                <input type="email" id="username" name="username"/>
                 {/* <!-- Use type="email" for email validation and "required" to make the field mandatory --> */}
                             
               <label for="password">Password:</label>
-                <input type="password" id="password" name="password" minlength="8" required/>
+                <input type="password" id="password" name="password" minlength="8"/>
                 {/* <!-- Use "minlength" to specify the minimum number of characters required for the password --> */}
+              <label for="name">Name:</label>
+                <input type="text" id="name" name="name" onChange={handleInputChange}/>
             </section>
 
             <section>
@@ -71,10 +83,10 @@ export default function Register() {
 
             <div className="form-actions">       
               <button type="submit">
-                <a href="login">Register</a>
+                <Link href={{pathname: '/home', query: {myName: myName}}}>Register</Link>
               </button>
-              <button type="submit" id="cancel">
-                <a href="http://localhost:3000/">Back</a>
+              <button type="submit">
+                <a href="/">Back</a>
               </button>
             </div>
           </fieldset>

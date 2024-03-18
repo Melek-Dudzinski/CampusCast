@@ -24,7 +24,6 @@ export default function Profile() {
   const homePostcode = "E3 4NX";
 
   const handleInputChange = (event) => {
-    console.log(event.target.value)
     setName(event.target.value);
   };
 
