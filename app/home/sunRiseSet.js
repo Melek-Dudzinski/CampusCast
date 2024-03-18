@@ -37,7 +37,7 @@ export default function SunRiseSet({locationSelected}) {
         // Convert to 12-hour format and set period to "PM"
         period = " PM";
         if (hours !== 12) {
-          hours = hours - 12;
+          hours -= 12;
         } else {
           hours = hours;
         }

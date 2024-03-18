@@ -21,12 +21,22 @@ export default function Remainder({locationSelected}) {
     useEffect(() => {
           fetchData();
       }, [locationSelected]);
+
+    let reminders = ""
+    reminders += "Test reminder\n"
+    
+    const temp = weatherData ? weatherData.main.temp : "Loading...";
+    if (temp > 32) {
+      reminders += "Make sure to bring a water bottle, as weather is paryicualrly hot\n"
+    } else if (temp < 0) {
+      reminders += "Make sure you have enough layers as it is particularly cold today\n"
+    }
     
     return (
         <>
             <div id="reminder-box">
                 <h3 id="titles">Reminders</h3>
-                <p></p>
+                <p>{reminders}</p>
             </div>
         </>
     )

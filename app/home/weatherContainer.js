@@ -57,7 +57,11 @@ export default function WeatherContainer({Title, locationSelected, times, uniLoc
       } else {
         // Convert to 12-hour format and set period to "PM"
         period = " PM";
-        hours = hours - 12;
+        if (hours !== 12) {
+          hours -= 12;
+        } else {
+          hours = hours;
+        }
       }
       currentTime = hours + ":" + minutes + period;
   } else if (city === uniLocation) {
@@ -71,12 +75,6 @@ export default function WeatherContainer({Title, locationSelected, times, uniLoc
   var hour = currentTime.toString().slice(0, -6)
   if (AMPM === "PM") {
     hour = parseInt(hour) + 12;
-  }
-  if (hour.length === 1) {
-    hour = "0" + hour
-  }
-  if (currentTime.length === 7) {
-    currentTime = "0" + currentTime
   }
   var min = currentTime.toString().slice(0, -3).slice(3)
 
