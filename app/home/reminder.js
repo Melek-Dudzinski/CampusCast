@@ -71,6 +71,14 @@ export default function Remainder({locationSelected}) {
     reminders.push("Low visibility advisory, consider postponing non-essential travel until conditions improve.")
   }
 
+  if (main.indexOf("Haze") !== -1 || main.indexOf("Smoke") !== -1) {
+    reminders.push("Limit outdoor activities due to exposure to harmful particles, follow public health guidelines.")
+  }
+
+  if (main.indexOf("Sandstorm") !== -1) {
+    reminders.push("Wear protective gear like goggles and masks to shield your eyes and airway")
+  }
+
   return (
     <>
       <div id="reminder-box">
