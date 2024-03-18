@@ -93,23 +93,6 @@ export default function WeatherContainer({Title, locationSelected, times, uniLoc
       fetchData();
   });
 
-  const x = document.getElementById("demo");
-
-  function getLocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-      console.log("Geolocation is not supported by this browser.")
-    }
-  }
-
-  function showPosition(position) {
-    console.log( "Latitude: " + position.coords.latitude +
-    "<br>Longitude: " + position.coords.longitude)
-  }
-
-  // getLocation()
-
   return (
     <>
       {/* <form onSubmit={handleSubmit}>
