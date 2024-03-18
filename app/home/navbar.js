@@ -54,35 +54,35 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
     }
   }
 
-  function showSearch(){
-    hideColor()
-    let s = document.getElementById('searchBar')
-    if (s.style.visibility==="visible"){
-      hideSearch()
-    } else{
-      s.style.visibility="visible";
-    }
-  }
+  // function showSearch(){
+  //   hideColor()
+  //   let s = document.getElementById('searchBar')
+  //   if (s.style.visibility==="visible"){
+  //     hideSearch()
+  //   } else{
+  //     s.style.visibility="visible";
+  //   }
+  // }
 
-  function hideSearch(){
-    let s = document.getElementById('searchBar')
-    s.style.visibility="hidden";
-  }
+  // function hideSearch(){
+  //   let s = document.getElementById('searchBar')
+  //   s.style.visibility="hidden";
+  // }
 
-  function showColor(){
-    hideSearch()
-    let s = document.getElementById('searchBarColor')
-    if (s.style.visibility==="visible"){
-      hideColor()
-    } else{
-      s.style.visibility="visible";
-    }
-  }
+  // function showColor(){
+  //   hideSearch()
+  //   let s = document.getElementById('searchBarColor')
+  //   if (s.style.visibility==="visible"){
+  //     hideColor()
+  //   } else{
+  //     s.style.visibility="visible";
+  //   }
+  // }
 
-  function hideColor(){
-    let s = document.getElementById('searchBarColor')
-    s.style.visibility="hidden";
-  }
+  // function hideColor(){
+  //   let s = document.getElementById('searchBarColor')
+  //   s.style.visibility="hidden";
+  // }
 
   function handleSubmit(e, result) {
     e.preventDefault();
@@ -92,6 +92,16 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
     var f = result.searchResult
     result=f
     console.log(result)
+  }
+
+  function changeContent(id) {
+    var contents = document.getElementsByClassName("content");
+    for (var i = 0; i < contents.length; i++) {
+      contents[i].classList.remove("active");
+    }
+    
+    var contentToShow = document.getElementById(id);
+    contentToShow.classList.add("active");
   }
 
   useEffect(() => {
@@ -119,17 +129,21 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
           <figcaption ref={homeCaption}>Home</figcaption>
         </figure>
         <figure id="fig">
-          <input onClick={()=>showSearch()} id="search" type="image" src="/search.png"/>
+          <input onClick={()=>changeContent('content1')} id="search" type="image" src="/search.png"/>
           <figcaption>Search</figcaption>
         </figure>
         <figure>
-          <input onClick={()=>showColor()} id="change-background" type="image" src='/change_background.jpg'/>
+          <input onClick={()=>changeContent('content2')} id="change-background" type="image" src='/change_background.jpg'/>
           <figcaption>Change Background</figcaption>
         </figure>
       </nav>
       <form method="post" onSubmit={handleSubmit}>
-        <input name="searchResult" id="searchBar" type="text" placeholder='Enter location'></input>
-        <input name="colorResult" id="searchBarColor" type="color" onChange={handleColorChange}></input>
+        <div id="content1" class="content active">
+          <input name="searchResult" id="searchBar" type="text" placeholder='Enter location'></input>
+        </div>
+        <div id="content2" class="content">
+          <input name="colorResult" id="searchBarColor" type="color" onChange={handleColorChange}></input>
+        </div>
       </form>
 
     </>
