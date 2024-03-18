@@ -12,10 +12,10 @@ export default function Profile() {
                     <section>
                         <legend>Personal Information</legend>
                             <label for="name">Full Name:</label>
-                            <input type="text" id="name" name="name" required />
+                            <input type="text" id="name" name="name" />
 
                             <label for="email">Email:</label>
-                            <input type="email" id="email" name="email" required />
+                            <input type="email" id="email" name="email"/>
                             
                             <label for="password">New Password:</label>
                             <input type="password" id="password" name="password" minLength="8" />
@@ -29,36 +29,68 @@ export default function Profile() {
                     <section>
                         <legend>University</legend>
                             <label for="University_Name">Name of University:</label>
-                            <input type="text" id="U_name" name="U_name" required />
+                            <input type="text" id="U_name" name="U_name" />
 
-                            <label for="weekday">Weekday:</label>
-                                <select id="weekday" name="weekday" required>
-                                    <option value="">Select a weekday</option>
-                                    <option value="Monday">Monday</option>
-                                    <option value="Tuesday">Tuesday</option>
-                                    <option value="Wednesday">Wednesday</option>
-                                    <option value="Thursday">Thursday</option>
-                                    <option value="Friday">Friday</option>
-                                </select>
+                             <label for="Postcode">Postcode:</label>
+                             <input type="text" id="U-postcode" name="U-postcode" minLength="6" />
 
-                            <label for="Arrive">Come Time:</label>
-                            <input type="time" id="time" name="come-time" required />
-                            
-                            <label for="Leave">Leave Time:</label>
-                            <input type="time" id="time" name="leave-time" required />
+
+                            <label for="weekday">Weekday Schedule:</label>
+                                <table border="1">
+                                    <tr>
+                                        <th>Weekday</th>
+                                        <th>Come Time</th>
+                                        <th>Leave Time</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Monday</td>
+                                        <td><input type="time" name="mondayComeTime"/></td>
+                                        <td><input type="time" name="mondayLeaveTime"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tuesday</td>
+                                        <td><input type="time" name="tuesdayComeTime"/></td>
+                                        <td><input type="time" name="tuesdayLeaveTime"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wednesday</td>
+                                        <td><input type="time" name="wednesdayComeTime"/></td>
+                                        <td><input type="time" name="wednesdayLeaveTime"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Thursday</td>
+                                        <td><input type="time" name="thursdayComeTime"/></td>
+                                        <td><input type="time" name="thursdayLeaveTime"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Friday</td>
+                                        <td><input type="time" name="fridayComeTime"/></td>
+                                        <td><input type="time" name="fridayLeaveTime"/></td>
+                                    </tr>
+                                </table>
+
+                        <label for="travel-time">Travel time:</label>
+                            <select id="travel-time" name="travel-time">
+                                <option value="1">30 minutes</option>
+                                <option value="1">1 hour</option>
+                                <option value="2">1.5 hours</option>
+                                <option value="1">2 hours</option>
+                            </select>
                     </section>
 
                     <section>
                         <legend>Home</legend>
-                            <label for="Location">Location:</label>
-                            <input type="text" id="location" name="location" minLength="100" required />
                             <label for="Postcode">Postcode:</label>
-                            <input type="text" id="postcode" name="postcode" minLength="6" required />
+                            <input type="text" id="H-postcode" name="H-postcode" minLength="6" />
                     </section>
 
                     <div className="form-actions">
-                        <button type="submit">Save Changes</button>
-                        <button type="submit" id="cancel">Cancel</button>
+                        <button type="submit">
+                            <a href="home">Save Changes</a>
+                        </button>
+                        <button type="submit" id="cancel">
+                            <a href="home">Back</a>
+                        </button>
                     </div>
                 </fieldset>
             </form>
