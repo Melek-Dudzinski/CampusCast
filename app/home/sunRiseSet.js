@@ -48,6 +48,7 @@ export default function SunRiseSet({locationSelected}) {
 
   let sunriseTime = weatherData ? formatTime(new Date(weatherData.sys.sunrise * 1000)) : "Loading...";
   let sunsetTime = weatherData ? formatTime(new Date(weatherData.sys.sunset * 1000)) : "Loading...";
+  
     return (
         <>
             <div class = "weather-box">
