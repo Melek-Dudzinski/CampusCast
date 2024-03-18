@@ -7,7 +7,8 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
   const uniCaption = useRef(null)
   const home = useRef(null)
   const homeCaption = useRef(null)
-    
+  var result = ''
+
   useEffect(() => {
     if (uniToggle===true){
       setLocation(uniLocation)
@@ -61,6 +62,21 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
     s.style.visibility="hidden";
   }
 
+  function handleSubmit(e, result) {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    result = Object.fromEntries(formData.entries());
+    var f = result.searchResult
+    result=f
+    console.log(result)
+  }
+
+  useEffect(() => {
+      console.log("reuslt changed")
+  }, [result])
+
+
   return (
     <>
       <header>
@@ -86,7 +102,9 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
           <figcaption>Search</figcaption>
         </figure>               
       </nav>
-      <input id="searchBar" type="text" placeholder='Enter location'></input>
+      <form method="post" onSubmit={handleSubmit}>
+        <input name="searchResult" id="searchBar" type="text" placeholder='Enter location'></input>
+      </form>
     </>
   )
 }
