@@ -25,18 +25,15 @@ export default function Profile() {
                             <textarea id="bio" name="bio" rows="4" />
                             <small>Leave blank if you don't want to change or have any bio</small>
                     </section>
-
                     <section>
                         <legend>University</legend>
                             <label for="University_Name">Name of University:</label>
                             <input type="text" id="U_name" name="U_name" />
-
-                             <label for="Postcode">Postcode:</label>
-                             <input type="text" id="U-postcode" name="U-postcode" minLength="6" />
-
-
+                            <label for="Postcode">Postcode:</label>
+                            <input type="text" id="U-postcode" name="U-postcode" minLength="6" />
                             <label for="weekday">Weekday Schedule:</label>
-                                <table border="1">
+                            <table border="1">
+                                <tbody>
                                     <tr>
                                         <th>Weekday</th>
                                         <th>Come Time</th>
@@ -67,9 +64,9 @@ export default function Profile() {
                                         <td><input type="time" name="fridayComeTime"/></td>
                                         <td><input type="time" name="fridayLeaveTime"/></td>
                                     </tr>
-                                </table>
-
-                        <label for="travel-time">Travel time:</label>
+                                </tbody>
+                            </table>
+                            <label for="travel-time">Travel time:</label>
                             <select id="travel-time" name="travel-time">
                                 <option value="1">30 minutes</option>
                                 <option value="1">1 hour</option>
@@ -77,13 +74,11 @@ export default function Profile() {
                                 <option value="1">2 hours</option>
                             </select>
                     </section>
-
                     <section>
                         <legend>Home</legend>
                             <label for="Postcode">Postcode:</label>
                             <input type="text" id="H-postcode" name="H-postcode" minLength="6" />
                     </section>
-
                     <div className="form-actions">
                         <button type="submit">
                             <a href="home">Save Changes</a>
