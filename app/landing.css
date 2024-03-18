@@ -1,35 +1,36 @@
-body{
-    background: rgb(149, 207, 255);
+body {
+  background: rgb(149, 207, 255);
 }
 
-div{
-    top:50%;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+div {
+  top:50%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-h1{
-    text-align:center;
-    margin:2em 0 2em 0;
-    font-size:3em;
+h1 {
+  text-align:center;
+  margin:2em 0 2em 0;
+  font-size:3em;
 }
 
-button{
-    margin:2em 1em 1em 1em;
-    width:80%;
-    font-size:2em;
+button {
+  margin:2em 1em 1em 1em;
+  width:80%;
+  font-size:2em;
 }
 
-button:hover{
-    transition-duration: 0.3s;
-    color: rgb(0, 0, 0);
-    background: yellow;
-    transform: translateY(-9px);
-    box-shadow: 0em 0.3em 0em 0em rgb(44, 44, 44);
+button:hover {
+  transition-duration: 0.3s;
+  color: rgb(0, 0, 0);
+  background: yellow;
+  transform: translateY(-9px);
+  box-shadow: 0em 0.3em 0em 0em rgb(44, 44, 44);
 }
-p{
-    text-align:center;
-    margin:2em 20px 2em 20px;
+
+p {
+  text-align:center;
+  margin:2em 20px 2em 20px;
 }
