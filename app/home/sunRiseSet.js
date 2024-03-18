@@ -21,14 +21,40 @@ export default function SunRiseSet({locationSelected}) {
     useEffect(() => {
           fetchData();
       }, [locationSelected]);
+    
+    function formatTime(date) {
+      let hours = date.getHours();
+      let minutes = String(date.getMinutes()).padStart(2, "0")
+      let period = ""
+      if (hours < 12) {
+        // Set period to "AM"
+        period = " AM";
+        // If hours is 0 (midnight), set it to 12
+        if (hours === 0) {
+          hours = 12
+        }
+      } else {
+        // Convert to 12-hour format and set period to "PM"
+        period = " PM";
+        if (hours !== 12) {
+          hours = hours - 12;
+        } else {
+          hours = hours;
+        }
+      }
+      const formattedTime = hours + ":" + minutes + period;
+      return formattedTime
+    };
 
+  let sunriseTime = weatherData ? formatTime(new Date(weatherData.sys.sunrise * 1000)) : "Loading...";
+  let sunsetTime = weatherData ? formatTime(new Date(weatherData.sys.sunset * 1000)) : "Loading...";
     return (
         <>
             <div class = "weather-box">
                 <h3 id="titles">Sunrise & Sunset Time</h3>
                 <ul class="weather">
-                    <li>Sunrise:</li>
-                    <li>Sunset</li>
+                    <li>Sunrise: {sunriseTime}</li>
+                    <li>Sunset: {sunsetTime}</li>
                 </ul>
             </div>
         </>

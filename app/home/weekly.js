@@ -1,7 +1,7 @@
 import Image from "next/image";
 import './weekly.css'
 
-export default function Weekly() {
+export default function Weekly({locationSelected}) {
     return (
         <>
             <div id="weekly-weather">

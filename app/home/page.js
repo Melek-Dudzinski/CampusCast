@@ -32,8 +32,8 @@ export default function Main() {
         <WeatherContainer Title="Current Weather" locationSelected={locationSelected} times={realTime} uniLocation={uniLocation} homeLocation={homeLocation} at={false} to={false}/>
         <WeatherContainer Title="Arrive at " locationSelected={locationSelected} times={arriveTimes} uniLocation={uniLocation} homeLocation={homeLocation} at={false} to={true}/>
         <SunRiseSet locationSelected={locationSelected}/>
-        <Reminder />
-        <Weekly />
+        <Reminder locationSelected={locationSelected}/>
+        <Weekly locationSelected={locationSelected}/>
       </div>
     </>
   )
