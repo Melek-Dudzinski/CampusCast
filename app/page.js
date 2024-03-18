@@ -6,7 +6,7 @@ export default function Landing() {
       <div>
         <h1>Welcome to CampusCast</h1>
         <p>
-          CampusCast is an ambitious student project for weather. It is a weather app for students where the weather you see is the weather that matters
+          CampusCast: Weather That Gets You! Your Personalized Weather App Designed by Students, for Students.
         </p>
         <button type="submit">
           <a href="login">Sign in</a>

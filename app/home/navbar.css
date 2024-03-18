@@ -38,6 +38,17 @@
     width:92%;
     visibility: hidden;
   }
+
+  #searchBarColor{
+    font-size: 1em;
+    padding:0.6em;
+    margin-top:2em;
+    margin-left: 1em;
+    border:transparent;
+    border-radius: 1em;
+    width:92%;
+    visibility: hidden;
+  }
   
   #searchBar:hover{
     transition-duration: 0.4s;

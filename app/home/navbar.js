@@ -1,8 +1,7 @@
 'use client';
 import './navbar.css'
-import React, {useRef, useEffect} from 'react';
+import React, {useRef, useEffect, useState} from 'react';
 import { useSearchParams } from 'next/navigation'
-import Link from 'next/link';
 
 export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocation, setLocation}) {
   const uni = useRef(null)
@@ -12,6 +11,10 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
   var result = ''
 
   const searchParams = useSearchParams()
+
+  const handleColorChange = (event) => {
+    document.body.style.background = event.target.value;
+  }
 
   useEffect(() => {
     if (uniToggle===true){
@@ -23,7 +26,6 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
   }, [uniToggle])
 
   function enlarge(button){
-    hide()
     if (button===uni){
       home.current.style.scale=null
       home.current.style.border=null
@@ -52,17 +54,33 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
     }
   }
 
-  function show(){
+  function showSearch(){
+    hideColor()
     let s = document.getElementById('searchBar')
     if (s.style.visibility==="visible"){
-      hide()
+      hideSearch()
     } else{
       s.style.visibility="visible";
     }
   }
 
-  function hide(){
+  function hideSearch(){
     let s = document.getElementById('searchBar')
+    s.style.visibility="hidden";
+  }
+
+  function showColor(){
+    hideSearch()
+    let s = document.getElementById('searchBarColor')
+    if (s.style.visibility==="visible"){
+      hideColor()
+    } else{
+      s.style.visibility="visible";
+    }
+  }
+
+  function hideColor(){
+    let s = document.getElementById('searchBarColor')
     s.style.visibility="hidden";
   }
 
@@ -87,10 +105,10 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
       </header>
       <nav>
         <figure>
-        <a href="profile">
-          <input id="personal" type="image" src="/personal.png"/>
-        </a>
-        <figcaption>Profile</figcaption>
+          <a href="profile">
+            <input id="personal" type="image" src="/personal.png"/>
+          </a>
+          <figcaption>Profile</figcaption>
         </figure>
         <figure>
           <input ref={uni} onClick={()=>setUniToggle(true)} id="university" type="image" src="/university.png"/>
@@ -101,13 +119,19 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
           <figcaption ref={homeCaption}>Home</figcaption>
         </figure>
         <figure id="fig">
-          <input onClick={()=>show()} id="search" type="image" src="/search.png"/>
+          <input onClick={()=>showSearch()} id="search" type="image" src="/search.png"/>
           <figcaption>Search</figcaption>
-        </figure>               
+        </figure>
+        <figure>
+          <input onClick={()=>showColor()} id="change-background" type="image" src='/change_background.jpg'/>
+          <figcaption>Change Background</figcaption>
+        </figure>
       </nav>
       <form method="post" onSubmit={handleSubmit}>
         <input name="searchResult" id="searchBar" type="text" placeholder='Enter location'></input>
+        <input name="colorResult" id="searchBarColor" type="color" onChange={handleColorChange}></input>
       </form>
+
     </>
   )
 }
