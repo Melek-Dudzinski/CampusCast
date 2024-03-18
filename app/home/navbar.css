@@ -20,6 +20,7 @@
 
   #university{
     scale:1.4;
+    border: solid 2px black;
   }
 
   #uniCaption{
