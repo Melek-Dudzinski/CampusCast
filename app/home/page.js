@@ -1,4 +1,5 @@
 'use client'
+
 import './home.css'
 import Navbar from './navbar.js'
 import WeatherContainer from './weatherContainer.js'

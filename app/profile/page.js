@@ -1,7 +1,12 @@
+'use client';
 import './profile.css'
+import React, { useState } from 'react';
+import Link from 'next/link';
+
+
 export default function Profile() {
 
-  const myName = "Real Name";
+  const [myName, setName] = useState("Real Name");
   const myEmail = "real@email.com";
   const uniName = "QMUL";
   const uniPostcode = "E3 4PR";
@@ -18,6 +23,11 @@ export default function Profile() {
   const weeklyTimes = [mondayCome, mondayLeave, tuesdayCome, tuesdayLeave, wednesdayCome, wednesdayLeave, thursdayCome, thursdayLeave, fridayCome, fridayLeave];
   const homePostcode = "E3 4NX";
 
+  const handleInputChange = (event) => {
+    console.log(event.target.value)
+    setName(event.target.value);
+  };
+
 
   return (
     <>
@@ -31,7 +41,7 @@ export default function Profile() {
             <section>
               <legend>Personal Information</legend>
               <label for="name">Full Name:</label>
-              <input type="text" id="name" name="name" value={myName}/>
+              <input type="text" id="name" name="name" onChange={handleInputChange} value={myName}/>
 
               <label for="email">Email:</label>
               <input type="email" id="email" name="email" value={myEmail}/>
@@ -104,7 +114,7 @@ export default function Profile() {
             
             <div className="form-actions">
               <button type="submit">
-                <a href="home">Save Changes</a>
+                <Link href={{pathname: '/home', query: {myName: myName}}}>Save Changes</Link>
               </button>
               <button type="submit" id="cancel">
                 <a href="home">Back</a>

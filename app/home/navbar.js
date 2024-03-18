@@ -1,6 +1,8 @@
 'use client';
 import './navbar.css'
 import React, {useRef, useEffect} from 'react';
+import { useSearchParams } from 'next/navigation'
+import Link from 'next/link';
 
 export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocation, setLocation}) {
   const uni = useRef(null)
@@ -8,6 +10,8 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
   const home = useRef(null)
   const homeCaption = useRef(null)
   var result = ''
+
+  const searchParams = useSearchParams()
 
   useEffect(() => {
     if (uniToggle===true){
@@ -76,11 +80,10 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
       console.log("reuslt changed")
   }, [result])
 
-
   return (
     <>
       <header>
-        <h1 id="greeting">Hello User!</h1>
+        <h1 id="greeting">Hello {searchParams.get('myName')}!</h1>
       </header>
       <nav>
         <figure>
