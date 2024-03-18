@@ -23,15 +23,54 @@ export default function Remainder({locationSelected}) {
   }, [locationSelected]);
 
   let reminders = []
-  reminders.push("Test reminder\n")
     
   const temp = weatherData ? weatherData.main.temp : "Loading...";
   if (temp > 32) {
-    reminders.push("Make sure to bring a water bottle, as weather is paryicualrly hot")
+    reminders.push("High temperature today, remember to stay hydrated and wear sunscreen.")
   } else if (temp < 0) {
-    reminders.push("Make sure you have enough layers as it is particularly cold today")
+    reminders.push("Low temperature expected, don't forget to layer up before heading out.")
   }
-    
+
+  const main = weatherData ? String(weatherData.weather[0].main) : "Loading...";
+  const desc = weatherData ? String(weatherData.weather[0].description) : "Loading...";
+  const descLower = desc.toLowerCase();
+  if (main.indexOf("Rain") !== -1|| main.indexOf("Drizzle") !== -1) {
+    reminders.push("Rain likely later, plan your commute accordingly.")
+  } else if (descLower.indexOf("rain") !== 1 || descLower.indexOf("shower") !== 1) {
+    reminders.push("Don't forget your umbrella! Rain is expected today.")
+  } else if (descLower.indexOf("sleet") !== -1 || descLower.indexOf("hail") !== -1) {
+    reminders.push("Rain likely later, plan your commute accordingly.")
+  }
+  
+  const windMs = weatherData ? weatherData.wind.speed : "Loading...";
+  const windKmh = windMs * 3.6;
+  if (main.indexOf("Wind") ==! -1|| main.indexOf("Gusts") !== -1) {
+    reminders.push("Windy conditions expected, secure loose objects outside.")
+  } else if (descLower.indexOf("wind") !== -1) {
+    reminders.push("Strong winds forecasted, consider postponing outdoor activities.")
+  } else if (windKmh > 40) {
+    reminders.push("Windy conditions expected, secure loose objects outside.")
+  }
+
+  if (main.indexOf("Snow") !== -1) {
+    reminders.push("Snowfall is expected! Check rail disruptions and university announcements for class cancellations and campus closures.")
+  } else if (descLower.indexOf("snow") !== -1) {
+    reminders.push("Snowfall is expected! Check rail disruptions and university announcements for class cancellations and campus closures.")
+  }
+
+  if (main.indexOf("Thunderstorm") !== -1) {
+    reminders.push("Thunderstorms are expected, so stay safe by staying indoors and away from windows.")
+  } else if (descLower.indexOf("thunderstorm") !== -1) {
+    reminders.push("Thunderstorms are expected, so stay safe by staying indoors and away from windows.")
+  }
+
+  const visibility = weatherData ? weatherData.vvisibility : "Loading...";
+  if (visibility < 1000) {
+    reminders.push("Extremely low visibility! Good idea to keep reflective gear or a flashlight.")
+  } else if (main.indexOf("Fog") !== -1 || main.indexOf("Haze") !== -1) {
+    reminders.push("Low visibility advisory, consider postponing non-essential travel until conditions improve.")
+  }
+
   return (
     <>
       <div id="reminder-box">
