@@ -2,6 +2,7 @@ import Image from 'next/image'
 import './reminder.css'
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Cookies from 'js-cookie';
 
 export default function Remainder({locationSelected}) {
   const [weatherData, setWeatherData] = useState(null);
@@ -89,6 +90,13 @@ export default function Remainder({locationSelected}) {
               <li key={index}>{reminders}</li>
             ))}
           </ul>
+
+          <form onSubmit={handleSubmit}>
+            <label for="reminder">Set reminder:</label>
+            <p></p>
+            <input type="text" id="text-box" name="reminder" value={reminder} onChange={handleInputChange} required />
+            <input id="reminder-button" type="submit" value="Add" />
+          </form>
       </div>
     </>
   )

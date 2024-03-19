@@ -8,3 +8,18 @@
   border-radius: 2.1875rem; /* Changed to 2.1875rem (2.1875rem = 35px / 16px) */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
+
+#reminder-button {
+  padding: 5px 10px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 4px;
+  background-color: #1d9812; 
+  color: white;
+}
+
+#text-box {
+  width: 260px;
+  height: 50px;
+  border-radius: 10px;
+}
