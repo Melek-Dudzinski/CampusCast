@@ -53,8 +53,8 @@ export default function SunRiseSet({locationSelected}) {
       <div class = "weather-box">
         <h3 id="titles">Sunrise & Sunset Time</h3>
         <ul class="weather">
-          <li>Sunrise: {sunriseTime}</li>
-          <li>Sunset: {sunsetTime}</li>
+          <li>Sunrise: {sunriseTime}<img src="/sunrise.png" id="sunrise" width="32" height="32" alt="Sunrise symbol"/></li>
+          <li>Sunset: {sunsetTime}<img src="/sunset.png" id="sunset" width="32" height="32" alt="Sunset"/></li>
         </ul>
       </div>
     </>

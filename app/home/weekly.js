@@ -77,32 +77,32 @@ export default function Weekly({ locationSelected}) {
         <ul class="weather">
           <li>Monday:
             <ul>
-              <li>Highs: {tempHighMon}°C</li>
-              <li>Lows: {tempLowMon}°C</li>
+              <li>Highs: {tempHighMon}°C<img src="/hot.png" id="hot" width="32" height="32" alt="High temperature symbol"/></li>
+              <li>Lows: {tempLowMon}°C<img src="/cold.png" id="cold" width="32" height="32" alt="Low temperature symbol"/></li>
             </ul>
           </li>
           <li>Tuesday: 
             <ul>
-              <li>Highs: {tempHighTues}°C</li>
-              <li>Lows: {tempLowTues}°C</li>
+              <li>Highs: {tempHighTues}°C<img src="/hot.png" id="hot" width="32" height="32" alt="High temperature symbol"/></li>
+              <li>Lows: {tempLowTues}°C<img src="/cold.png" id="cold" width="32" height="32" alt="Low temperature symbol"/></li>
             </ul>
           </li>
           <li>Wednesday
             <ul>
-              <li>Highs: {tempHighWed}°C</li>
-              <li>Lows: {tempLowWed}°C</li>
+              <li>Highs: {tempHighWed}°C<img src="/hot.png" id="hot" width="32" height="32" alt="High temperature symbol"/></li>
+              <li>Lows: {tempLowWed}°C<img src="/cold.png" id="cold" width="32" height="32" alt="Low temperature symbol"/></li>
             </ul>
           </li>
           <li>Thursday
             <ul>
-              <li>Highs: {tempHighThurs}°C</li>
-              <li>Lows: {tempLowThurs}°C</li>
+              <li>Highs: {tempHighThurs}°C<img src="/hot.png" id="hot" width="32" height="32" alt="High temperature symbol"/></li>
+              <li>Lows: {tempLowThurs}°C<img src="/cold.png" id="cold" width="32" height="32" alt="Low temperature symbol"/></li>
             </ul>
           </li>
           <li>Friday
             <ul>
-              <li>Highs: {tempHighFri}°C</li>
-              <li>Lows: {tempLowFri}°C</li>
+              <li>Highs: {tempHighFri}°C<img src="/hot.png" id="hot" width="32" height="32" alt="High temperature symbol"/></li>
+              <li>Lows: {tempLowFri}°C<img src="/cold.png" id="cold" width="32" height="32" alt="Low temperature symbol"/></li>
             </ul>
           </li>
         </ul>
