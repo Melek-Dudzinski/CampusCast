@@ -49,6 +49,7 @@ export default function Register() {
             <section>
               <label htmlFor="weekday">Weekday Schedule:</label>
               <table border="1">
+                <tbody>
                 {/* <!-- Making a table for the users to enter their timetable from monday to friday --> */}
                 <tr>
                   <th>Weekday</th>
@@ -80,6 +81,7 @@ export default function Register() {
                   <td><input type="time" name="fridayComeTime"/></td>
                   <td><input type="time" name="fridayLeaveTime"/></td>
                 </tr>
+                </tbody>
               </table>
                             
               <label htmlFor="travel-time">Travel time:</label>
@@ -93,10 +95,10 @@ export default function Register() {
 
             <section>
               <label htmlFor="homeLocation">Home Location:</label>
-              <input type="text" id="homeLocation" name="homeLocation" onChange={handleHomeChange} required/>
+              <input type="text" id="homeLocation" name="homeLocation" onChange={handleHomeChange}/>
 
               <label htmlFor="uniLocation">Uni Location:</label>
-              <input type="text" id="uniLocation" name="uniLocation" onChange={handleUniChange} required/>
+              <input type="text" id="uniLocation" name="uniLocation" onChange={handleUniChange}/>
             </section>
 
             <div className="form-actions">       

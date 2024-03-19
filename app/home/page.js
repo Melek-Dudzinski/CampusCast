@@ -21,10 +21,11 @@ export default function Main() {
   var realTime = true;
 
   const searchParams = useSearchParams()
-  if (searchParams.get('myHome') !== null){
+  if (searchParams.get('myHome') !== null && searchParams.get('myHome') !== ""){
+    console.log(searchParams.get('myHome'))
     homeLocation = searchParams.get('myHome')
   }
-  if (searchParams.get('myUni') !== null){
+  if (searchParams.get('myUni') !== null && searchParams.get('myUni') !== ""){
     uniLocation = searchParams.get('myUni')
   }
 
