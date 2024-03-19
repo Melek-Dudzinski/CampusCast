@@ -95,10 +95,6 @@ export default function WeatherContainer({Title, locationSelected, times, uniLoc
 
   return (
     <>
-      {/* <form onSubmit={handleSubmit}>
-      <input type="text" placeholder="Enter city name" value={city} onChange={handleInputChange}/>
-      <button type="submit">Get Weather</button>
-      </form> */}
       {weatherData ? (
         <div class="weather-box">
           <h3 id="titles">{Title + loc}</h3>

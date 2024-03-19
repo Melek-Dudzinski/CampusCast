@@ -66,46 +66,6 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
     }
   }
 
-  // function showSearch(){
-  //   hideColor()
-  //   let s = document.getElementById('searchBar')
-  //   if (s.style.visibility==="visible"){
-  //     hideSearch()
-  //   } else{
-  //     s.style.visibility="visible";
-  //   }
-  // }
-
-  // function hideSearch(){
-  //   let s = document.getElementById('searchBar')
-  //   s.style.visibility="hidden";
-  // }
-
-  // function showColor(){
-  //   hideSearch()
-  //   let s = document.getElementById('searchBarColor')
-  //   if (s.style.visibility==="visible"){
-  //     hideColor()
-  //   } else{
-  //     s.style.visibility="visible";
-  //   }
-  // }
-
-  // function hideColor(){
-  //   let s = document.getElementById('searchBarColor')
-  //   s.style.visibility="hidden";
-  // }
-
-  // function handleSubmit(e, result) {
-  //   e.preventDefault();
-  //   const form = e.target;
-  //   const formData = new FormData(form);
-  //   result = Object.fromEntries(formData.entries());
-  //   var f = result.searchResult
-  //   result=f
-  //   console.log(result)
-  // }
-
   function changeContent(id) {
     var contents = document.getElementsByClassName("content");
     for (var i = 0; i < contents.length; i++) {

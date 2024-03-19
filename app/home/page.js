@@ -6,12 +6,14 @@ import WeatherContainer from './weatherContainer.js'
 import SunRiseSet from './sunRiseSet.js'
 import Reminder from './reminder.js'
 import Weekly from './weekly.js'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation'
+import axios from 'axios';
 
 export default function Main() {
   var uniLocation = "London";
   var homeLocation = "Africa";
+  var currentLocation = "Arctic"
   var leaveHomeTime = "8:00 AM"
   var arriveUniTime = "9:00 AM"
   var leaveUniTime = "6:00 PM"
@@ -31,7 +33,53 @@ export default function Main() {
 
   const [uniToggle, setUniToggle] = useState(true)
   const [locationSelected, setLocation] = useState(uniLocation)
-  const [searchLocation, setSearchLocation] = useState("Arctic")
+  const [searchLocation, setSearchLocation] = useState(currentLocation);
+  // const [myLocation, setMyLocation] = useState();
+  // const [lat, setLat] = useState();
+  // const [lon, setLon] = useState();
+
+  // const fetchLocation = async () => {
+  //   try {
+  //     const MY_API_KEY = "47587e19f823f14e08d26b63b7a1f07d"
+  //     const response = await axios.get(
+  //       `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&appid=${MY_API_KEY}`
+  //     );
+  //     console.log("4")
+  //     setMyLocation(response.data);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+
+  // function getLocation() {
+  //   if (navigator.geolocation) {
+  //     console.log("2")
+  //     navigator.geolocation.getCurrentPosition(showPosition);
+  //   } else {
+  //     console.log("Geolocation is not supported by this browser.");
+  //   }
+  // }
+
+  // function showPosition(position) {
+  //   setLat(position.coords.latitude);
+  //   setLon(position.coords.longitude);
+  //   console.log("3")
+  //   fetchLocation();
+  // }
+
+
+
+  // useEffect(() => {
+  //   console.log(searchLocation)
+  //   console.log("1")
+  //   getLocation();
+  //   console.log(myLocation)
+  //   if (typeof myLocation !== 'undefined') {
+  //     console.log("have data")
+  //     console.log(myLocation[0].name)
+  //     setSearchLocation(myLocation[0].name)
+  //   }
+  // }, [myLocation])
 
   return (
     <>
