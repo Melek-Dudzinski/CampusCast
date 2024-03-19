@@ -6,9 +6,19 @@ import Link from 'next/link';
 export default function Register() {
 
   const [myName, setName] = useState("Real Name");
+  const [myHome, setHome] = useState("");
+  const [myUni, setUni] = useState("");
 
-  const handleInputChange = (event) => {
+  const handleNameChange = (event) => {
     setName(event.target.value);
+  };
+
+  const handleHomeChange = (event) => {
+    setHome(event.target.value);
+  };
+
+  const handleUniChange = (event) => {
+    setUni(event.target.value);
   };
 
   return (
@@ -33,7 +43,7 @@ export default function Register() {
                 <input type="password" id="password" name="password" minlength="8"/>
                 {/* <!-- Use "minlength" to specify the minimum number of characters required for the password --> */}
               <label for="name">Name:</label>
-                <input type="text" id="name" name="name" onChange={handleInputChange}/>
+                <input type="text" id="name" name="name" onChange={handleNameChange}/>
             </section>
 
             <section>
@@ -81,9 +91,17 @@ export default function Register() {
               </select>
             </section>
 
+            <section>
+              <label for="homeLocation">Home Location:</label>
+              <input type="text" id="homeLocation" name="homeLocation" onChange={handleHomeChange}/>
+
+              <label for="uniLocation">Uni Location:</label>
+              <input type="text" id="uniLocation" name="uniLocation" onChange={handleUniChange}/>
+            </section>
+
             <div className="form-actions">       
               <button type="submit">
-                <Link href={{pathname: '/home', query: {myName: myName}}}>Register</Link>
+                <Link href={{pathname: '/home', query: {myName: myName, myHome: myHome, myUni: myUni}}}>Register</Link>
               </button>
               <button type="submit">
                 <a href="/">Back</a>

@@ -7,6 +7,7 @@ import SunRiseSet from './sunRiseSet.js'
 import Reminder from './reminder.js'
 import Weekly from './weekly.js'
 import React, { useState } from 'react';
+import { useSearchParams } from 'next/navigation'
 
 export default function Main() {
   var uniLocation = "London";
@@ -16,6 +17,14 @@ export default function Main() {
   var leaveUniTime = "6:00 PM"
   var arriveHomeTime = "7:00 PM"
   var realTime = true;
+
+  const searchParams = useSearchParams()
+  if (searchParams.get('myHome') !== null){
+    homeLocation = searchParams.get('myHome')
+  }
+  if (searchParams.get('myUni') !== null){
+    uniLocation = searchParams.get('myUni')
+  }
 
   const leaveTimes = [leaveHomeTime, leaveUniTime]
   const arriveTimes = [arriveHomeTime, arriveUniTime]

@@ -16,6 +16,18 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
     document.body.style.background = event.target.value;
   }
 
+  const handleLocationChange = (event) => {
+    if (event.target.value !== ""){
+      try {
+        setCity(event.target.value)
+        console.log("ok")
+      } catch (error) {
+        console.log("not a place")
+        console.log(typeof event.target.value)
+      }
+    }
+  }
+
   useEffect(() => {
     if (uniToggle===true){
       setLocation(uniLocation)
@@ -84,15 +96,15 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
   //   s.style.visibility="hidden";
   // }
 
-  function handleSubmit(e, result) {
-    e.preventDefault();
-    const form = e.target;
-    const formData = new FormData(form);
-    result = Object.fromEntries(formData.entries());
-    var f = result.searchResult
-    result=f
-    console.log(result)
-  }
+  // function handleSubmit(e, result) {
+  //   e.preventDefault();
+  //   const form = e.target;
+  //   const formData = new FormData(form);
+  //   result = Object.fromEntries(formData.entries());
+  //   var f = result.searchResult
+  //   result=f
+  //   console.log(result)
+  // }
 
   function changeContent(id) {
     var contents = document.getElementsByClassName("content");
@@ -137,9 +149,9 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
           <figcaption>Change Background</figcaption>
         </figure>
       </nav>
-      <form method="post" onSubmit={handleSubmit}>
+      <form method="post">
         <div id="content1" class="content active">
-          <input name="searchResult" id="searchBar" type="text" placeholder='Enter location'></input>
+          <input name="searchResult" id="searchBar" type="text" placeholder='Enter location' onChange={handleLocationChange}></input>
         </div>
         <div id="content2" class="content">
           <input name="colorResult" id="searchBarColor" type="color" onChange={handleColorChange}></input>
