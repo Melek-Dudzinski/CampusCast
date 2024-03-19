@@ -79,6 +79,10 @@ export default function Remainder({locationSelected}) {
     reminders.push("Wear protective gear like goggles and masks to shield your eyes and airway")
   }
 
+  if (reminders.length === 0) {
+    reminders.push("Today's weather is " + descLower)
+  }
+
   return (
     <>
       <div id="reminder-box">
