@@ -33,41 +33,19 @@ export default function Remainder({locationSelected}) {
     }
   };
 
-  const handleGetCookie = () => {
+  useEffect(() => {
+    // This effect runs when the component mounts
     const cookies = Cookies.get('reminder-cookies');
     setCookieValue(cookies);
-  };
-
-  async function getSavedReminders(reminders) {
-    // Define a cache object to store previously computed results
-    const remindersCache = {};
-
-    // Check if the result is already cached
-    if (remindersCache.hasOwnProperty('cachedResult')) {
-        return remindersCache.cachedResult;
-    }
-
-    // If not cached, perform the operation
-    await handleGetCookie();
-    const cookieValue = Cookies.get('reminder-cookies');
-    const remindersFromCookie = cookieValue ? JSON.parse(cookieValue) : [];
-
-    // Cache the result for future use
-    remindersCache.cachedResult = remindersFromCookie;
-
-    return remindersFromCookie;
-  }
+  }, []); // Empty dependency array ensures the effect runs only once when the component mounts
 
   function handleSubmit(event) {
     event.preventDefault(); // Prevent the default form submission behavior
-
     // Retrieve the input value from the form
     const reminderInput = document.getElementById('text-box');
     const reminderValue = reminderInput.value;
-
     // Do something with the reminderValue (e.g., send it to a server, process it, etc.)
     handleSetCookie(reminderValue);
-
     // You can also reset the form if needed
     event.target.reset();
   }
@@ -77,7 +55,10 @@ export default function Remainder({locationSelected}) {
   }, [locationSelected]);
   
   let reminders = [];
-  let savedReminders = getSavedReminders(reminders);
+  const cookieLength = cookieValue ? cookieValue.length : []; 
+  for (let i = 0; i < cookieLength; i++) {
+    reminders.push(cookieValue[i]);
+  }
 
   const temp = weatherData ? weatherData.main.temp : "Loading...";
   if (temp > 32) {
