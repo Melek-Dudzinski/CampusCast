@@ -3,7 +3,7 @@ import './navbar.css'
 import React, {useRef, useEffect, useState} from 'react';
 import { useSearchParams } from 'next/navigation'
 
-export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocation, setLocation}) {
+export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocation, setLocation, setSearchLocation}) {
   const uni = useRef(null)
   const uniCaption = useRef(null)
   const home = useRef(null)
@@ -19,12 +19,12 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
   const handleLocationChange = (event) => {
     if (event.target.value !== ""){
       try {
-        setCity(event.target.value)
-        console.log("ok")
-      } catch (error) {
+        setSearchLocation(event.target.value)
+      } catch (AxiosError) {
         console.log("not a place")
-        console.log(typeof event.target.value)
       }
+    } else {
+      setSearchLocation("Arctic")
     }
   }
 

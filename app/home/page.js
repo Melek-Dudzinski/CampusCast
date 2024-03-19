@@ -31,16 +31,17 @@ export default function Main() {
 
   const [uniToggle, setUniToggle] = useState(true)
   const [locationSelected, setLocation] = useState(uniLocation)
+  const [searchLocation, setSearchLocation] = useState("Arctic")
 
   return (
     <>
       <title>Home page</title>
-      <Navbar uniToggle={uniToggle} setUniToggle={setUniToggle} uniLocation={uniLocation} homeLocation={homeLocation} setLocation={setLocation}/>
+      <Navbar uniToggle={uniToggle} setUniToggle={setUniToggle} uniLocation={uniLocation} homeLocation={homeLocation} setLocation={setLocation} setSearchLocation={setSearchLocation}/>
       <div class="weather-container">
       <h2>{"Destination: " + locationSelected}</h2>
-        <WeatherContainer Title="Leave from " locationSelected={locationSelected} times={leaveTimes} uniLocation={uniLocation} homeLocation={homeLocation} at={true} to={false}/>
-        <WeatherContainer Title="Current Weather" locationSelected={locationSelected} times={realTime} uniLocation={uniLocation} homeLocation={homeLocation} at={false} to={false}/>
-        <WeatherContainer Title="Arrive at " locationSelected={locationSelected} times={arriveTimes} uniLocation={uniLocation} homeLocation={homeLocation} at={false} to={true}/>
+        <WeatherContainer Title="Leave from " locationSelected={locationSelected} times={leaveTimes} uniLocation={uniLocation} homeLocation={homeLocation} at={true} to={false} searchLocation={searchLocation}/>
+        <WeatherContainer Title="Current Weather" locationSelected={locationSelected} times={realTime} uniLocation={uniLocation} homeLocation={homeLocation} at={false} to={false} searchLocation={searchLocation}/>
+        <WeatherContainer Title="Arrive at " locationSelected={locationSelected} times={arriveTimes} uniLocation={uniLocation} homeLocation={homeLocation} at={false} to={true} searchLocation={searchLocation}/>
         <SunRiseSet locationSelected={locationSelected}/>
         <Reminder locationSelected={locationSelected}/>
         <Weekly locationSelected={locationSelected}/>

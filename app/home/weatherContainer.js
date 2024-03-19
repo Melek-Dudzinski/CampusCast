@@ -5,7 +5,7 @@ import './weather.css'
 import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 
 
-export default function WeatherContainer({Title, locationSelected, times, uniLocation, homeLocation, at, to}) {
+export default function WeatherContainer({Title, locationSelected, times, uniLocation, homeLocation, at, to, searchLocation}) {
   var currentTime = {}
   var loc = {}
 
@@ -86,7 +86,7 @@ export default function WeatherContainer({Title, locationSelected, times, uniLoc
       } else if (at) {
         setCity(loc)
       } else {
-        setCity("Arctic")}
+        setCity(searchLocation)}
       }
       newDate.setUTCHours(hour)
       newDate.setUTCMinutes(min)
