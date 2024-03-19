@@ -86,7 +86,7 @@ export default function Main() {
     <>
       <title>Home page</title>
       <Navbar uniToggle={uniToggle} setUniToggle={setUniToggle} uniLocation={uniLocation} homeLocation={homeLocation} setLocation={setLocation} setSearchLocation={setSearchLocation}/>
-      <div class="weather-container">
+      <div className="weather-container">
       <h2>{"Destination: " + locationSelected}</h2>
         <WeatherContainer Title="Leave from " locationSelected={locationSelected} times={leaveTimes} uniLocation={uniLocation} homeLocation={homeLocation} at={true} to={false} searchLocation={searchLocation}/>
         <WeatherContainer Title="Current Weather" locationSelected={locationSelected} times={realTime} uniLocation={uniLocation} homeLocation={homeLocation} at={false} to={false} searchLocation={searchLocation}/>

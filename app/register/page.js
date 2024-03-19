@@ -106,7 +106,7 @@ export default function Register() {
                 <Link href={{pathname: '/home', query: {myName: myName, myHome: myHome, myUni: myUni}}}>Register</Link>
               </button>
               <button type="submit">
-                <a href="/">Back</a>
+                <Link href="/">Back</Link>
               </button>
             </div>
           </fieldset>
