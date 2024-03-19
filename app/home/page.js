@@ -79,7 +79,7 @@ export default function Main() {
   //     console.log(myLocation[0].name)
   //     setSearchLocation(myLocation[0].name)
   //   }
-  // }, [myLocation])
+  // })
 
   return (
     <>
