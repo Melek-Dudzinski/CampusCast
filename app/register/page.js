@@ -27,7 +27,7 @@ export default function Register() {
       <header>
         <h1>CampusCast Registration</h1>
       </header>
-      <div class="register-box">
+      <div className="register-box">
         <form id="form" name="register-form" method="post" action="">
           <fieldset>
             <hgroup>
@@ -35,19 +35,19 @@ export default function Register() {
             </hgroup>
 
             <section>    
-              <label for="username">Email</label>
+              <label htmlFor="username">Email</label>
                 <input type="email" id="username" name="username"/>
                 {/* <!-- Use type="email" for email validation and "required" to make the field mandatory --> */}
                             
-              <label for="password">Password:</label>
-                <input type="password" id="password" name="password" minlength="8"/>
+              <label htmlFor="password">Password:</label>
+                <input type="password" id="password" name="password" minLength="8"/>
                 {/* <!-- Use "minlength" to specify the minimum number of characters required for the password --> */}
-              <label for="name">Name:</label>
+              <label htmlFor="name">Name:</label>
                 <input type="text" id="name" name="name" onChange={handleNameChange}/>
             </section>
 
             <section>
-              <label for="weekday">Weekday Schedule:</label>
+              <label htmlFor="weekday">Weekday Schedule:</label>
               <table border="1">
                 {/* <!-- Making a table for the users to enter their timetable from monday to friday --> */}
                 <tr>
@@ -82,7 +82,7 @@ export default function Register() {
                 </tr>
               </table>
                             
-              <label for="travel-time">Travel time:</label>
+              <label htmlFor="travel-time">Travel time:</label>
               <select id="travel-time" name="travel-time">
                 <option value="1">30 minutes</option>
                 <option value="1">1 hour</option>
@@ -92,11 +92,11 @@ export default function Register() {
             </section>
 
             <section>
-              <label for="homeLocation">Home Location:</label>
-              <input type="text" id="homeLocation" name="homeLocation" onChange={handleHomeChange}/>
+              <label htmlFor="homeLocation">Home Location:</label>
+              <input type="text" id="homeLocation" name="homeLocation" onChange={handleHomeChange} required/>
 
-              <label for="uniLocation">Uni Location:</label>
-              <input type="text" id="uniLocation" name="uniLocation" onChange={handleUniChange}/>
+              <label htmlFor="uniLocation">Uni Location:</label>
+              <input type="text" id="uniLocation" name="uniLocation" onChange={handleUniChange} required/>
             </section>
 
             <div className="form-actions">       

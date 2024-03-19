@@ -60,10 +60,6 @@
     font-weight: bold; 
   }
   
-  #cancel {
-    background-color: #95a5a6; 
-  }
-  
   @media (max-width: 768px) {
     .profile-settings-box {
       margin: 10px;
