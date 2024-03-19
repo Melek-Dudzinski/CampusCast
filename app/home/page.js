@@ -13,7 +13,7 @@ import axios from 'axios';
 export default function Main() {
   var uniLocation = "Mile End";
   var homeLocation = "Finsbury Park";
-  var currentLocation = "Arctic"
+  var currentLocation = "Homerton"
   var leaveHomeTime = "8:00 AM"
   var arriveUniTime = "9:00 AM"
   var leaveUniTime = "6:00 PM"
