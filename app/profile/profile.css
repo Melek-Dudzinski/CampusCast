@@ -4,8 +4,8 @@ h1 {
 }
 
 .profile-settings-box {
-  padding: 20px;
-  margin: 20px;
+  padding: 10px;
+  margin: 10px;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%); 
   border-radius: 10px; 
 }
@@ -47,7 +47,7 @@ input,textarea {
 }
 
 td{
-  padding:0.3em;
+  padding:0em;
 }
 
 small {
