@@ -74,7 +74,7 @@ export default function Weekly({ locationSelected}) {
     <>
       <div id="weekly-weather">
         <h3 id="titles">Weekly Forecast</h3>
-        <ul class="weather">
+        <ul className="weather">
           <li>Monday:
             <ul>
               <li>Highs: {tempHighMon}°C<img src="/hot.png" id="hot" width="32" height="32" alt="High temperature symbol"/></li>

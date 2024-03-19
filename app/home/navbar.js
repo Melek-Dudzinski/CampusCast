@@ -110,10 +110,10 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
         </figure>
       </nav>
       <form method="post">
-        <div id="content1" class="content active">
+        <div id="content1" className="content active">
           <input name="searchResult" id="searchBar" type="text" placeholder='Enter location' onChange={handleLocationChange}></input>
         </div>
-        <div id="content2" class="content">
+        <div id="content2" className="content">
           <input name="colorResult" id="searchBarColor" type="color" onChange={handleColorChange}></input>
         </div>
       </form>

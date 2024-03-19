@@ -13,7 +13,7 @@ import axios from 'axios';
 export default function Main() {
   var uniLocation = "Mile End";
   var homeLocation = "Finsbury Park";
-  var currentLocation = "Arctic"
+  var currentLocation = "Homerton"
   var leaveHomeTime = "8:00 AM"
   var arriveUniTime = "9:00 AM"
   var leaveUniTime = "6:00 PM"
@@ -21,10 +21,11 @@ export default function Main() {
   var realTime = true;
 
   const searchParams = useSearchParams()
-  if (searchParams.get('myHome') !== null){
+  if (searchParams.get('myHome') !== null && searchParams.get('myHome') !== ""){
+    console.log(searchParams.get('myHome'))
     homeLocation = searchParams.get('myHome')
   }
-  if (searchParams.get('myUni') !== null){
+  if (searchParams.get('myUni') !== null && searchParams.get('myUni') !== ""){
     uniLocation = searchParams.get('myUni')
   }
 
@@ -85,7 +86,7 @@ export default function Main() {
     <>
       <title>Home page</title>
       <Navbar uniToggle={uniToggle} setUniToggle={setUniToggle} uniLocation={uniLocation} homeLocation={homeLocation} setLocation={setLocation} setSearchLocation={setSearchLocation}/>
-      <div class="weather-container">
+      <div className="weather-container">
       <h2>{"Destination: " + locationSelected}</h2>
         <WeatherContainer Title="Leave from " locationSelected={locationSelected} times={leaveTimes} uniLocation={uniLocation} homeLocation={homeLocation} at={true} to={false} searchLocation={searchLocation}/>
         <WeatherContainer Title="Current Weather" locationSelected={locationSelected} times={realTime} uniLocation={uniLocation} homeLocation={homeLocation} at={false} to={false} searchLocation={searchLocation}/>

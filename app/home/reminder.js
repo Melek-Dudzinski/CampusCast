@@ -87,7 +87,7 @@ export default function Remainder({locationSelected}) {
     <>
       <div id="reminder-box">
         <h3 id="titles">Reminders</h3>
-          <ul class="weather">
+          <ul className="weather">
             {/* Map over the array and create list items */}
             {reminders.map((reminders, index) => (
               <li key={index}>{reminders}</li>

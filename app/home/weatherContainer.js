@@ -96,10 +96,10 @@ export default function WeatherContainer({Title, locationSelected, times, uniLoc
   return (
     <>
       {weatherData ? (
-        <div class="weather-box">
+        <div className="weather-box">
           <h3 id="titles">{Title + loc}</h3>
-          <div class="weather">
-            <ul class="elements">
+          <div className="weather">
+            <ul className="elements">
               <li id="time">
                 Time: {currentTime}<img src="/time.png" width="32" height="32" alt="Time symbol"/>
               </li>
