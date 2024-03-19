@@ -5,7 +5,7 @@ import './weather.css'
 import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 
 
-export default function WeatherContainer({Title, locationSelected, times, uniLocation, homeLocation, at, to}) {
+export default function WeatherContainer({Title, locationSelected, times, uniLocation, homeLocation, at, to, searchLocation}) {
   var currentTime = {}
   var loc = {}
 
@@ -86,36 +86,15 @@ export default function WeatherContainer({Title, locationSelected, times, uniLoc
       } else if (at) {
         setCity(loc)
       } else {
-        setCity("Arctic")}
+        setCity(searchLocation)}
       }
       newDate.setUTCHours(hour)
       newDate.setUTCMinutes(min)
       fetchData();
   });
 
-  const x = document.getElementById("demo");
-
-  function getLocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-      console.log("Geolocation is not supported by this browser.")
-    }
-  }
-
-  function showPosition(position) {
-    console.log( "Latitude: " + position.coords.latitude +
-    "<br>Longitude: " + position.coords.longitude)
-  }
-
-  // getLocation()
-
   return (
     <>
-      {/* <form onSubmit={handleSubmit}>
-      <input type="text" placeholder="Enter city name" value={city} onChange={handleInputChange}/>
-      <button type="submit">Get Weather</button>
-      </form> */}
       {weatherData ? (
         <div class="weather-box">
           <h3 id="titles">{Title + loc}</h3>

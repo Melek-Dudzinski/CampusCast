@@ -1,6 +1,26 @@
+'use client';
 import './register.css'
+import React, { useState } from 'react';
+import Link from 'next/link';
 
 export default function Register() {
+
+  const [myName, setName] = useState("Real Name");
+  const [myHome, setHome] = useState("");
+  const [myUni, setUni] = useState("");
+
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+  };
+
+  const handleHomeChange = (event) => {
+    setHome(event.target.value);
+  };
+
+  const handleUniChange = (event) => {
+    setUni(event.target.value);
+  };
+
   return (
     <>
       <title>Register</title>
@@ -16,12 +36,14 @@ export default function Register() {
 
             <section>    
               <label for="username">Email</label>
-                <input type="email" id="username" name="username" required/>
+                <input type="email" id="username" name="username"/>
                 {/* <!-- Use type="email" for email validation and "required" to make the field mandatory --> */}
                             
               <label for="password">Password:</label>
-                <input type="password" id="password" name="password" minlength="8" required/>
+                <input type="password" id="password" name="password" minlength="8"/>
                 {/* <!-- Use "minlength" to specify the minimum number of characters required for the password --> */}
+              <label for="name">Name:</label>
+                <input type="text" id="name" name="name" onChange={handleNameChange}/>
             </section>
 
             <section>
@@ -69,12 +91,20 @@ export default function Register() {
               </select>
             </section>
 
+            <section>
+              <label for="homeLocation">Home Location:</label>
+              <input type="text" id="homeLocation" name="homeLocation" onChange={handleHomeChange}/>
+
+              <label for="uniLocation">Uni Location:</label>
+              <input type="text" id="uniLocation" name="uniLocation" onChange={handleUniChange}/>
+            </section>
+
             <div className="form-actions">       
               <button type="submit">
-                <a href="login">Register</a>
+                <Link href={{pathname: '/home', query: {myName: myName, myHome: myHome, myUni: myUni}}}>Register</Link>
               </button>
-              <button type="submit" id="cancel">
-                <a href="http://localhost:3000/">Back</a>
+              <button type="submit">
+                <a href="/">Back</a>
               </button>
             </div>
           </fieldset>
