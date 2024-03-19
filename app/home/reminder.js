@@ -6,6 +6,7 @@ import Cookies from 'js-cookie';
 
 export default function Remainder({locationSelected}) {
   const [weatherData, setWeatherData] = useState(null);
+  const [cookieValue, setCookieValue] = useState('');
 
   const fetchData = async () => {
     try {
@@ -19,12 +20,65 @@ export default function Remainder({locationSelected}) {
     }
   };
 
+  const handleSetCookie = (formData) => {
+    const existingCookieValue = Cookies.get('reminder-cookies');
+    if (existingCookieValue !== undefined && existingCookieValue !== null) {
+      let newCookies = existingCookieValue
+      newCookies.push(formData)
+      Cookies.set('reminder-cookies', newCookies)
+    } else {
+      // Cookie doesn't exist, set it to an empty array
+      Cookies.set('reminder-cookies', [formData]);
+      console.log('Reminder cookie has been set to an empty array.');
+    }
+  };
+
+  const handleGetCookie = () => {
+    const cookies = Cookies.get('reminder-cookies');
+    setCookieValue(cookies);
+  };
+
+  async function getSavedReminders(reminders) {
+    // Define a cache object to store previously computed results
+    const remindersCache = {};
+
+    // Check if the result is already cached
+    if (remindersCache.hasOwnProperty('cachedResult')) {
+        return remindersCache.cachedResult;
+    }
+
+    // If not cached, perform the operation
+    await handleGetCookie();
+    const cookieValue = Cookies.get('reminder-cookies');
+    const remindersFromCookie = cookieValue ? JSON.parse(cookieValue) : [];
+
+    // Cache the result for future use
+    remindersCache.cachedResult = remindersFromCookie;
+
+    return remindersFromCookie;
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    // Retrieve the input value from the form
+    const reminderInput = document.getElementById('text-box');
+    const reminderValue = reminderInput.value;
+
+    // Do something with the reminderValue (e.g., send it to a server, process it, etc.)
+    handleSetCookie(reminderValue);
+
+    // You can also reset the form if needed
+    event.target.reset();
+  }
+
   useEffect(() => {
     fetchData();
   }, [locationSelected]);
+  
+  let reminders = [];
+  let savedReminders = getSavedReminders(reminders);
 
-  let reminders = []
-    
   const temp = weatherData ? weatherData.main.temp : "Loading...";
   if (temp > 32) {
     reminders.push("High temperature today, remember to stay hydrated and wear sunscreen.")
@@ -91,11 +145,11 @@ export default function Remainder({locationSelected}) {
             ))}
           </ul>
 
-          <form onSubmit={handleSubmit}>
+          <form id="reminder-form" onsubmit="handleSubmit(event)">
             <label for="reminder">Set reminder:</label>
             <p></p>
-            <input type="text" id="text-box" name="reminder" value={reminder} onChange={handleInputChange} required />
-            <input id="reminder-button" type="submit" value="Add" />
+            <input type="text" id="text-box" name="reminder" required></input>
+            <input id="reminder-button" type="submit"></input>
           </form>
       </div>
     </>
