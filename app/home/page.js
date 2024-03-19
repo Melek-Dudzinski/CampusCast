@@ -11,8 +11,8 @@ import { useSearchParams } from 'next/navigation'
 import axios from 'axios';
 
 export default function Main() {
-  var uniLocation = "London";
-  var homeLocation = "Africa";
+  var uniLocation = "Mile End";
+  var homeLocation = "Finsbury Park";
   var currentLocation = "Arctic"
   var leaveHomeTime = "8:00 AM"
   var arriveUniTime = "9:00 AM"
