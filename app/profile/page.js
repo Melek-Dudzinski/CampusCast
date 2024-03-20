@@ -98,10 +98,10 @@ export default function Profile() {
               </table>
                 <label for="travel-time">Travel time:</label>
                 <select id="travel-time" name="travel-time">
-                  <option value="1">30 minutes</option>
-                  <option value="1">1 hour</option>
-                  <option value="2">1.5 hours</option>
-                  <option value="1">2 hours</option>
+                  <option value="1">- 30 minutes</option>
+                  <option value="1">30 - 60 minutes</option>
+                  <option value="2">1 - 2 hours</option>
+                  <option value="1">2 + hours</option>
                 </select>
             </section>
             

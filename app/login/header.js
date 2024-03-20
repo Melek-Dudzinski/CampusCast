@@ -4,7 +4,7 @@ export default function Header(){
   return (
     <>
     <header>
-        <h1>Login to CampusCast</h1>
+        <h1>CampusCast Login</h1>
     </header>
     </>
   )
