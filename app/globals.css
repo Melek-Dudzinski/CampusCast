@@ -41,10 +41,10 @@ button[type="submit"] {
   transition: all 0.1s ease;
 }
 
-button[type="submit"]:hover{
+button[type="submit"]:active{
   background-color: yellow;
   color: rgb(0, 0, 0);
-  transform: translateY(-9px);
+  transform: translateY(-7px);
   box-shadow: 0 0.3em 0em 0em black;
 }
 

@@ -27,7 +27,12 @@
   background-color: #1d9812; 
   color: white;
 }
-
+.login-box button[type="submit"]:active{  
+  background-color: yellow;
+  color: rgb(0, 0, 0);
+  transform: translateY(-7px);
+  box-shadow: 0 0.3em 0em 0em black;
+}
 .login-box label {
   display: block;
   font-size: 1.0rem; 
