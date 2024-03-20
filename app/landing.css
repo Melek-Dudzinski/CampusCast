@@ -1,36 +1,66 @@
 body {
-  background: rgb(149, 207, 255);
-}
-
-div {
-  top:50%;
-  display:flex;
+  background: rgba(130, 168, 236, 0.459);
+  margin: 0;
+  padding: 0;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: auto;
+  width: auto;
+  font-family: 'Arial', sans-serif;
+  border-radius: 10px;
+  padding-top: 60px;
+}
+
+div {
+  width: 90%;
+  max-width: 390px;
+  padding: 90px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+  margin: auto;
 }
 
 h1 {
-  text-align:center;
-  margin:2em 0 2em 0;
-  font-size:3em;
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 0.5em;
+}
+
+.description {
+  width: 100%; /* Makes the <p> as wide as the div container */
+  font-size: 1em;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 2em;
 }
 
 button {
-  margin:2em 1em 1em 1em;
-  width:80%;
-  font-size:2em;
+  padding: 15px 0;
+  width: 80%;
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  box-shadow: 0 4px #2c2c2c;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none; /* Removes underline from links */
 }
 
 button:hover {
-  transition-duration: 0.3s;
-  color: rgb(0, 0, 0);
   background: yellow;
+  color: rgb(0, 0, 0);
   transform: translateY(-9px);
-  box-shadow: 0em 0.3em 0em 0em rgb(44, 44, 44);
+  box-shadow: 0 0.3em 0em 0em
 }
 
-p {
-  text-align:center;
-  margin:2em 20px 2em 20px;
+a {
+  text-decoration: none;
+  color: inherit;
 }

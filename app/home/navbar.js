@@ -9,11 +9,15 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
   const home = useRef(null)
   const homeCaption = useRef(null)
   var result = ''
+  const colors = ['rgba(130, 168, 236, 0.459)', 'lightgreen', 'lightpink', 'lightyellow', 'lightgray'];
+  const [colorIndex, setColorIndex] = useState(0);
 
   const searchParams = useSearchParams()
 
-  const handleColorChange = (event) => {
-    document.body.style.background = event.target.value;
+  const handleColorChange = () => {
+    const nextColorIndex = (colorIndex + 1) % colors.length;
+    document.body.style.background = colors[nextColorIndex];
+    setColorIndex(nextColorIndex);
   }
 
   const handleLocationChange = (event) => {
@@ -106,6 +110,7 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
         </figure>
         <figure>
           <input onClick={()=>changeContent('content2')} id="change-background" type="image" src='/change_background.jpg'/>
+          <input onClick={handleColorChange} />
           <figcaption>Change Background</figcaption>
         </figure>
       </nav>
