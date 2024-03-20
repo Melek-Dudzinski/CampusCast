@@ -9,3 +9,13 @@
   background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
   border-radius: 35px;
 }
+
+#hot, #cold {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  right: 0;
+  margin-right: 30px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
