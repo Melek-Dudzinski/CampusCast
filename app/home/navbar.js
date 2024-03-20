@@ -10,14 +10,15 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
   const homeCaption = useRef(null)
   var result = ''
   const colors = ['rgba(130, 168, 236, 0.459)', 'lightgreen', 'lightpink', 'lightyellow', 'lightgray'];
-  const [colorIndex, setColorIndex] = useState(0);
+  // const [colorIndex, setColorIndex] = useState(0);
 
   const searchParams = useSearchParams()
 
-  const handleColorChange = () => {
-    const nextColorIndex = (colorIndex + 1) % colors.length;
-    document.body.style.background = colors[nextColorIndex];
-    setColorIndex(nextColorIndex);
+  const handleColorChange = (event) => {
+    // const nextColorIndex = (colorIndex + 1) % colors.length;
+    // document.body.style.background = colors[nextColorIndex];
+    // setColorIndex(nextColorIndex);
+    document.body.style.background = (event.target.value)
   }
 
   const handleLocationChange = (event) => {
@@ -28,7 +29,7 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
         console.log("not a place")
       }
     } else {
-      setSearchLocation("Arctic")
+      setSearchLocation("Homerton, London")
     }
   }
 
@@ -110,12 +111,12 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
         </figure>
         <figure>
           <input onClick={()=>changeContent('content2')} id="change-background" type="image" src='/change_background.jpg'/>
-          <input onClick={handleColorChange} />
+          {/* <input onClick={handleColorChange} /> */}
           <figcaption>Change Background</figcaption>
         </figure>
       </nav>
       <form method="post">
-        <div id="content1" className="content active">
+        <div id="content1" className="content">
           <input name="searchResult" id="searchBar" type="text" placeholder='Enter location' onChange={handleLocationChange}></input>
         </div>
         <div id="content2" className="content">

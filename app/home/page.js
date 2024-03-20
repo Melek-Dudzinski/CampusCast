@@ -11,13 +11,13 @@ import { useSearchParams } from 'next/navigation'
 import axios from 'axios';
 
 export default function Main() {
-  var uniLocation = "Mile End";
-  var homeLocation = "Finsbury Park";
-  var currentLocation = "Homerton"
-  var leaveHomeTime = "8:00 AM"
-  var arriveUniTime = "9:00 AM"
-  var leaveUniTime = "6:00 PM"
-  var arriveHomeTime = "7:00 PM"
+  var uniLocation = "Mile End, London";
+  var homeLocation = "Finsbury Park, London";
+  var currentLocation = "Homerton, London";
+  var leaveHomeTime = "8:00 AM";
+  var arriveUniTime = "9:00 AM";
+  var leaveUniTime = "6:00 PM";
+  var arriveHomeTime = "7:00 PM";
   var realTime = true;
 
   const searchParams = useSearchParams()

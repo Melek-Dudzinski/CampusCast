@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export default function Profile() {
 
-  const [myName, setName] = useState("Real Name");
+  const [myName, setName] = useState("John Doe");
   const myEmail = "real@email.com";
   const uniName = "QMUL";
   const uniPostcode = "E3 4PR";
@@ -35,7 +35,7 @@ export default function Profile() {
         <h1>Profile</h1>
       </header>
       <div className="profile-settings-box">
-        <form id="profile-form" name="profile-form" method="post" action="/update-profile">
+        <form id="profile-form" name="profile-form" method="post" action="">
           <fieldset>
             <section>
               <legend>Personal Information</legend>
@@ -112,12 +112,8 @@ export default function Profile() {
             </section>
             
             <div className="form-actions">
-              <button type="submit">
-                <Link href={{pathname: '/home', query: {myName: myName}}}>Save Changes</Link>
-              </button>
-              <button type="submit" id="cancel">
-                <a href="home">Back</a>
-              </button>
+                <Link href={{pathname: '/home', query: {myName: myName}}}><button type="submit">Save Changes</button></Link>
+                <Link href="/home"><button type="submit">Back</button></Link>
             </div>
           </fieldset>
         </form>

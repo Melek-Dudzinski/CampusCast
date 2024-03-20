@@ -102,12 +102,8 @@ export default function Register() {
             </section>
 
             <div className="form-actions">       
-              <button type="submit">
-                <Link href={{pathname: '/home', query: {myName: myName, myHome: myHome, myUni: myUni}}}>Register</Link>
-              </button>
-              <button type="submit">
-                <Link href="/">Back</Link>
-              </button>
+                <Link href={{pathname: '/home', query: {myName: myName, myHome: myHome, myUni: myUni}}}><button type="submit">Register</button></Link>
+                <Link href="/"><button type="submit">Back</button></Link>
             </div>
           </fieldset>
         </form>

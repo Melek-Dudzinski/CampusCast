@@ -36,7 +36,6 @@ figure figcaption{
   border:transparent;
   border-radius: 1em;
   width:92%;
-  /* visibility: hidden; */
 }
 
 #searchBarColor{
@@ -47,7 +46,6 @@ figure figcaption{
   border:transparent;
   border-radius: 1em;
   width:92%;
-  /* visibility: hidden; */
 }
 
 #searchBar:hover{
