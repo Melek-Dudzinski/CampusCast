@@ -21,8 +21,6 @@
 }
   
 .login-box button[type="submit"] {
-  padding: 10px 20px;
-  margin: 0 5px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -46,11 +44,16 @@
   padding-bottom: 5%;
 }
 
-.login-box button {
-  margin-bottom: 0.5rem;
-  margin-right: 3rem;
+#footer{
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
 }
 
-#footer{
-  align-items: center;
+button{
+  width:100%;
+}
+
+a{
+  margin:0.5em;
 }
