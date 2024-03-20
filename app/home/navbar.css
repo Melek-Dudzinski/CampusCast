@@ -59,3 +59,16 @@ figure figcaption{
 .active {
   display: block;
 }
+
+#logout{
+  width: 80%;
+  border-radius: 10em;
+  border: solid 1px rgb(0, 0, 0);
+  transition-duration: 0.2s;
+  margin-left: 30%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
