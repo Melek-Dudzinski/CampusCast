@@ -30,11 +30,11 @@ export default function Register() {
       <div className="register-box">
         <form id="form" name="register-form" method="post" action="">
           <fieldset>
+            <section>   
             <hgroup>
-              <h1>Register</h1><br></br>
+              <h2>Register</h2><br></br>
             </hgroup>
-
-            <section>    
+ 
               <label htmlFor="username">Email</label>
                 <input type="email" id="username" name="username"/>
                 {/* <!-- Use type="email" for email validation and "required" to make the field mandatory --> */}
@@ -47,7 +47,7 @@ export default function Register() {
             </section>
 
             <section>
-              <label htmlFor="weekday">Weekday Schedule:</label><br></br>
+              <label htmlFor="weekday" id="weekdayT" >Weekday Schedule:</label><br></br>
               <table border="1">
                 <tbody>
                 {/* <!-- Making a table for the users to enter their timetable from monday to friday --> */}

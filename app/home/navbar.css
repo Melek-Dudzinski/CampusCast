@@ -36,6 +36,11 @@ figure figcaption{
   border:transparent;
   border-radius: 1em;
   width:92%;
+  background-color:white;
+}
+
+#searchBar:hover{
+  transition-duration: 0.4s;
 }
 
 #searchBarColor{
@@ -46,10 +51,8 @@ figure figcaption{
   border:transparent;
   border-radius: 1em;
   width:92%;
-}
-
-#searchBar:hover{
-  transition-duration: 0.4s;
+  background-color:white;
+  height:40px;
 }
 
 .content {
@@ -60,12 +63,17 @@ figure figcaption{
   display: block;
 }
 
+h1{
+  margin-right:1em;
+}
+
 #logout{
   width: 80%;
   border-radius: 10em;
   border: solid 1px rgb(0, 0, 0);
   transition-duration: 0.2s;
   margin-left: 30%;
+  margin-top:0.3em;
 }
 
 table {

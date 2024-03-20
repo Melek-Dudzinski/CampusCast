@@ -8,7 +8,6 @@ import Reminder from './reminder.js'
 import Weekly from './weekly.js'
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation'
-import axios from 'axios';
 
 export default function Main() {
   var uniLocation = "Mile End, London";

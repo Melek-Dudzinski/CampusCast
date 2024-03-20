@@ -27,8 +27,10 @@ export default function Form() {
             <input type="password" id="password" name="password" minlength="8" required/><br/>
             {/* <!-- Use "minlength" to specify the minimum number of characters required for the password --> */}
           </section> 
-            <Link href={{pathname: 'home', query: {myName: myName}}}><button type="submit">Log In</button></Link>
-            <Link href="/"><button type="submit">Back</button></Link>          
+          <div id="footer">
+            <Link rel="email" href={{pathname: 'home', query: {myName: myName}}}><button type="submit">Log In</button></Link>
+            <Link href="/"><button type="submit">Back</button></Link>
+          </div>       
         </fieldset>
       </form>
     </>

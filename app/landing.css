@@ -16,7 +16,7 @@ body {
 div {
   width: 90%;
   max-width: 390px;
-  padding: 90px;
+  padding: 90px 50px 130px 50px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background: white;
   border-radius: 10px;
@@ -25,14 +25,14 @@ div {
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 2.6em;
   color: #333;
   margin-bottom: 0.5em;
 }
 
 .description {
   width: 100%; /* Makes the <p> as wide as the div container */
-  font-size: 1em;
+  font-size: 1.1em;
   color: #555;
   line-height: 1.5;
   margin-bottom: 2em;
@@ -41,23 +41,14 @@ h1 {
 button {
   padding: 15px 0;
   width: 80%;
-  font-size: 1.2em;
+  font-size: 1.4em;
   margin-bottom: 1em;
   border: none;
   border-radius: 5px;
   background-color: #4CAF50;
   color: white;
-  box-shadow: 0 4px #2c2c2c;
-  transition: all 0.3s ease;
   cursor: pointer;
   text-decoration: none; /* Removes underline from links */
-}
-
-button:hover {
-  background: yellow;
-  color: rgb(0, 0, 0);
-  transform: translateY(-9px);
-  box-shadow: 0 0.3em 0em 0em
 }
 
 a {

@@ -39,6 +39,8 @@ section {
 table {
   width: 100%; /* Table should take the full width */
   border-collapse: collapse; /* Collapses border to a single line */
+  margin-top: 0.6em;
+  margin-bottom:0.6em;
 }
 
 input[type="text"],
@@ -47,11 +49,21 @@ input[type="password"],
 input[type="time"],
 textarea,
 select {
-  width: calc(90% - 2em); /* Full width minus padding */
+  width: calc(100% - 2em); /* Full width minus padding */
   margin-bottom: 1em; /* Add space below inputs */
   padding: 5px;
   border: 1px solid #949ea4;
   border-radius: 4px;
+}
+
+button {
+  font-size:1em;
+  width: 100%; /* Full-width buttons on small screens */
+  margin-top: 20px; /* Add spacing between buttons */
+}
+
+td{
+  padding:0.3em;
 }
 
 @media (max-width: 390px) {
@@ -67,10 +79,5 @@ select {
   
   section, .form-actions {
     align-items: stretch
-  }
-  
-  button {
-    width: 100%; /* Full-width buttons on small screens */
-    margin-top: 10px; /* Add spacing between buttons */
   }
 }

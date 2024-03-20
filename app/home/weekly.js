@@ -1,4 +1,3 @@
-import Image from "next/image";
 import './weekly.css'
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -81,25 +80,25 @@ export default function Weekly({ locationSelected}) {
               <li>Lows: {tempLowMon}°C<img src="/cold.png" id="cold"alt="Low temperature symbol"/></li>
             </ul>
           </li>
-          <li>Tuesday: 
+          <li>Tuesday:
             <ul>
               <li>Highs: {tempHighTues}°C<img src="/hot.png" id="hot" alt="High temperature symbol"/></li>
               <li>Lows: {tempLowTues}°C<img src="/cold.png" id="cold" alt="Low temperature symbol"/></li>
             </ul>
           </li>
-          <li>Wednesday
+          <li>Wednesday:
             <ul>
               <li>Highs: {tempHighWed}°C<img src="/hot.png" id="hot" alt="High temperature symbol"/></li>
               <li>Lows: {tempLowWed}°C<img src="/cold.png" id="cold" alt="Low temperature symbol"/></li>
             </ul>
           </li>
-          <li>Thursday
+          <li>Thursday:
             <ul>
               <li>Highs: {tempHighThurs}°C<img src="/hot.png" id="hot" alt="High temperature symbol"/></li>
               <li>Lows: {tempLowThurs}°C<img src="/cold.png" id="cold" alt="Low temperature symbol"/></li>
             </ul>
           </li>
-          <li>Friday
+          <li>Friday:
             <ul>
               <li>Highs: {tempHighFri}°C<img src="/hot.png" id="hot" alt="High temperature symbol"/></li>
               <li>Lows: {tempLowFri}°C<img src="/cold.png" id="cold" alt="Low temperature symbol"/></li>

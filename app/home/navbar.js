@@ -92,7 +92,7 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
           <tbody>
             <tr>
             <td style={{ width: '15%'}}><a href="/"><input id="logout" type="image" src="/logout.png"/></a></td>
-              <td><h1 id="greeting">Hello {searchParams.get('myName')}!</h1></td>
+            <td><h1 id="greeting">Hello {searchParams.get('myName')}!</h1></td>
             </tr>
           </tbody>
         </table>
@@ -117,7 +117,7 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
           <figcaption>Search</figcaption>
         </figure>
         <figure>
-          <input onClick={()=>changeContent('content2')} id="change-background" type="image" src='/change_background.jpg'/>
+          <input onClick={()=>changeContent('content2')} id="change-background" type="image" src='/changeTheme.png'/>
           {/* <input onClick={handleColorChange} /> */}
           <figcaption>Change Background</figcaption>
         </figure>
@@ -130,7 +130,6 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
           <input name="colorResult" id="searchBarColor" type="color" onChange={handleColorChange}></input>
         </div>
       </form>
-
     </>
   )
 }
