@@ -16,7 +16,7 @@ export default function Form() {
       <form id="form" name="login-form" method="post" action="">
         <fieldset>
           <hgroup className="sign">
-            <h1>Sign in</h1>
+            <h1>Log in</h1>
           </hgroup>
           <section>
             <label for="username">Email:</label>

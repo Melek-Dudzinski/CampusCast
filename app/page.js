@@ -5,7 +5,7 @@ export default function Landing() {
     <>
       <div>
         <h1>Welcome to CampusCast</h1>
-        <p>
+        <p className='description'>
           CampusCast: Weather That Gets You! Your Personalized Weather App Designed by Students, for Students.
         </p>
         <button type="submit">

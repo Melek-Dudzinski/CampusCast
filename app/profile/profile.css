@@ -1,75 +1,76 @@
-h1 {
-  margin: 0;
-  font-size: 2em; 
-}
-
 .profile-settings-box {
-  padding: 10px;
-  margin: 10px;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%); 
-  border-radius: 10px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  margin: 0 auto; /* Centers the box on the screen */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 10px;
+  max-width: 370px; /* Max-width for iPhone 12 Pro */
 }
 
-.profile-settings-box form {
-  display: grid;
-  grid-gap: 20px;
+.profile form {
+  width: 100%; /* Use 100% of .register-box width */
+}
+
+h1 {
+  font-size: 2.5em; 
+  color: rgb(42, 36, 36);
 }
 
 legend {
-  padding: 0 5px;
-  font-size: 1.5em;
-  margin-bottom: 10px;
-  color: #333;
-  font-weight: bold;
+  font-size: 1.2em; /* Increase font size */
+  font-weight: bold; /* Make it bold */
+  padding-bottom: 0.3%;
+  color: rgb(42, 36, 36);
 }
 
-label {
-  display: block;
-  font-size: 1.0em;
-  margin: 10px 0 5px;
-  color: #2c3e50; 
+section {
+  width: 100%; /* Full width of the form */
+  margin-bottom: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 
+/* Styles for table to make it responsive */
+table {
+  width: 100%; /* Table should take the full width */
+  border-collapse: collapse; /* Collapses border to a single line */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="time"],
+textarea,
 select {
-  padding: 10px 15px;
-  border: 1px solid #ccc; 
-  border-radius: 10px;
-  background-color: white;
-  outline: none; 
-}
-
-input,textarea {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #bdc3c7;
+  width: calc(90% - 2em); /* Full width minus padding */
+  margin-bottom: 1em; /* Add space below inputs */
+  padding: 5px;
+  border: 1px solid #949ea4;
   border-radius: 4px;
 }
 
-td{
-  padding:0em;
-}
-
-small {
-  display: block;
-  margin-bottom: 10px;
-  color: #95a5a6; 
-}
-
-.form-actions {
-  text-align: right;
-}
-
-button {
-  padding: 10px 20px;
-  margin: 0 5px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold; 
-}
-
-button[type="submit"]:hover {
-  background-color:rgba(30, 153, 235, 0.801); 
-  color: white;
+@media (max-width: 390px) {
+  /* Adjustments for smaller screens, like the iPhone 12 Pro */
+  .profile-settings-box {
+    padding: 20px;
+    margin: 20px auto;
+  }
+  
+  input[type="time"] {
+    width: 100%; /* Make time inputs full width on small screens */
+  }
+  
+  section, .form-actions {
+    align-items: stretch
+  }
+  
+  button {
+    width: 100%; /* Full-width buttons on small screens */
+    margin-top: 10px; /* Add spacing between buttons */
+  }
 }

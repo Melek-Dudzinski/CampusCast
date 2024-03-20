@@ -47,7 +47,7 @@ export default function Register() {
             </section>
 
             <section>
-              <label htmlFor="weekday">Weekday Schedule:</label>
+              <label htmlFor="weekday">Weekday Schedule:</label><br></br>
               <table border="1">
                 <tbody>
                 {/* <!-- Making a table for the users to enter their timetable from monday to friday --> */}
@@ -82,7 +82,7 @@ export default function Register() {
                   <td><input type="time" name="fridayLeaveTime"/></td>
                 </tr>
                 </tbody>
-              </table>
+              </table><br></br>
                             
               <label htmlFor="travel-time">Travel time:</label>
               <select id="travel-time" name="travel-time">
