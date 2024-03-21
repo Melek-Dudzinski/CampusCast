@@ -1,11 +1,19 @@
 # Read Me!
 
-First time installation
-1. Make sure you are in the latest version of main
-2. Open terminal (you can open in visual studio code aswell)
-3. Run 'npm install'
-4. Run 'npm install axios'
-5. Run 'npm run dev'
-6. To navigate to the pages, enter in the folder you want to see e.g. to see the register page, you would do localhost:3000/register.
+CampusCast: A weather app for studnets
+By:
+Saloni Nishil Desai
+Mustafa El Gawish Acedera
+Melchior Dudzinski
+Selin Djemal
+Alysa Syahin Binti Fadzli
 
-If you have already done the above steps, you only have to execute 'npm run dev' command into the terminal in order to run the react app. Make sure you are in the CampusCast directory first.
+How to run
+1. Make sure you have the project download on your machine
+2. Make sure your node version is 18.17 or later
+3. Open terminal (you can open in visual studio code aswell)
+4. Make sure you are in the 'campuscast' directory
+5. Run 'npm install' in terminal
+6. Run 'npm install axios' in terminal
+7. Run 'npm run dev' in terminal
+8. To navigate to the pages go to: localhost:3000/
