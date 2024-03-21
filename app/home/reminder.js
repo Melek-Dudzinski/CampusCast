@@ -6,7 +6,7 @@ export default function Remainder({locationSelected}) {
   //sets a useState for the weather data to ensure fetching it with a useEffect does not cause issues
   const [weatherData, setWeatherData] = useState(null);
 
-  //fetches data with the fetchData method
+  //fetches data with the fetchData method. The response constant fetches the weather data for a given location.
   const fetchData = async () => {
     try {
       const MY_API_KEY = "47587e19f823f14e08d26b63b7a1f07d"

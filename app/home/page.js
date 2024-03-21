@@ -17,12 +17,12 @@ export default function Main() {
   var arriveUniTime = "9:00 AM";
   var leaveUniTime = "6:00 PM";
   var arriveHomeTime = "7:00 PM";
+  //Determines if a weather container will display the real time
   var realTime = true;
 
-  //Get parameters from url passed from other page
+  //Get parameters from url passed from other page. The parameters changes the home and/or university location
   const searchParams = useSearchParams()
   if (searchParams.get('myHome') !== null && searchParams.get('myHome') !== ""){
-    console.log(searchParams.get('myHome'))
     homeLocation = searchParams.get('myHome')
   }
   if (searchParams.get('myUni') !== null && searchParams.get('myUni') !== ""){

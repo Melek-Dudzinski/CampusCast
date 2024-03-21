@@ -4,19 +4,19 @@ import React, {useRef, useEffect} from 'react';
 import { useSearchParams } from 'next/navigation'
 
 export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocation, setLocation, setSearchLocation}) {
-  // Constants used to see which sections of the navbar are selected
+  // Constants used to see which sections of the navbar are selected. They are null at the start, and when an event occurs, they are returned a reference to the dom elements
   const uni = useRef(null)
   const uniCaption = useRef(null)
   const home = useRef(null)
   const homeCaption = useRef(null)
   const searchParams = useSearchParams()
 
-  //Change the color of the background on change
+  //Change the color of the background on event
   const handleColorChange = (event) => {
     document.body.style.background = (event.target.value)
   }
 
-  //Change location of middle weather container when anything valid is typed into searchbar
+  //Change location of middle weather container when anything valid is typed into the searchbar. If nothing is entered, the default location is used
   const handleLocationChange = (event) => {
     if (event.target.value !== ""){
       try {
@@ -29,7 +29,7 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
     }
   }
 
-  //Run on uniToggle change, changes icon displayed and location displayed
+  //When uniToggle is changed, this function executes, changing the location of the arrival/departure and enlarging the respective button
   useEffect(() => {
     if (uniToggle===true){
       setLocation(uniLocation)
@@ -40,7 +40,7 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
   }, [uniToggle])
 
 
-  //Enlarge button pressed
+  //Enlarges the university or home button on toggle. If university button is pressed, the home button and caption css styles are reset and university is enlarged. If home button is pressed, same logic applies (css styles for university button is slightly different due to university button enlarged be default) 
   function enlarge(button){
     if (button===uni){
       home.current.style.scale=null
@@ -58,7 +58,7 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
     lower()
   }
 
-  //Lower and bold text of button pressed
+  //Lower and bolden text of button pressed, in order to accomodate for the enlarged button
   function lower(){
     if (uniToggle===true){
       uniCaption.current.style.position="relative"
@@ -71,7 +71,7 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
     }
   }
 
-  //Changes whether searchbar or color picker is displayed
+  //Changes whether searchbar or color picker is displayed. Fetches the two elements which have className content, and removes any instances of the class active. Then, gives the chosen option the class active.
   function changeContent(id) {
     var contents = document.getElementsByClassName("content");
     for (var i = 0; i < contents.length; i++) {
