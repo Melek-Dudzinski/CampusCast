@@ -3,13 +3,17 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 export default function Weekly({ locationSelected}) {
+  //sets a useState for the weather data to ensure fteching it with a useEffect does not cause issues
   const [city, setCity] = useState('');
+  //use states for each day of the week to prevent issues with the useEffect
   const [weatherDataMonday, setWeatherDataMonday] = useState(null);
   const [weatherDataTuesday, setWeatherDataTuesday] = useState(null);
   const [weatherDataWednesday, setWeatherDataWednesday] = useState(null);
   const [weatherDataThursday, setWeatherDataThursday] = useState(null);
   const [weatherDataFriday, setWeatherDataFriday] = useState(null);
 
+  //fetches data with the fetchData method
+  //method slightly altered the method to also take setter (aka the day of the week)
   const fetchData = async (date, setter) => {
     try {
       const MY_API_KEY = "47587e19f823f14e08d26b63b7a1f07d"
@@ -23,37 +27,50 @@ export default function Weekly({ locationSelected}) {
   };
 
   const today = new Date();
-  const dayOfWeek = today.getDay(); // 0 (Sunday) through 6 (Saturday)
+  //0 (Sunday) through 6 (Saturday)
+  const dayOfWeek = today.getDay(); 
 
-  const monday = new Date(today); // Copy today's date
-  monday.setDate(today.getDate() - (dayOfWeek - 1)); // Calculate Monday by subtracting days from the current date
-  // Use the date for Monday of the current week directly
+  //copy today's date
+  const monday = new Date(today); 
+  //calculate Monday by subtracting days from the current date
+  monday.setDate(today.getDate() - ((dayOfWeek + 6) % 7)); 
   const selectedMonday = Math.floor(monday.getTime() / 1000);
 
-  const tuesday = new Date(today); // Copy today's date
-  tuesday.setDate(today.getDate() - (dayOfWeek - 2)); // Calculate Monday by subtracting days from the current date
+  //copy today's date
+  const tuesday = new Date(today);
+  //calculate Tuesday by subtracting days from the current date 
+  tuesday.setDate(today.getDate() - ((dayOfWeek + 5) % 7)); 
   const selectedTuesday = Math.floor(tuesday.getTime() / 1000);
 
-  const wednesday = new Date(today); // Copy today's date
-  wednesday.setDate(today.getDate() - (dayOfWeek - 3)); // Calculate Monday by subtracting days from the current date
+  //copy today's date
+  const wednesday = new Date(today);
+  //calculate Wednesday by subtracting days from the current date
+  wednesday.setDate(today.getDate() - ((dayOfWeek + 4) % 7));
   const selectedWednesday = Math.floor(wednesday.getTime() / 1000);
 
-  const thursday = new Date(today); // Copy today's date
-  thursday.setDate(today.getDate() - (dayOfWeek - 4)); // Calculate Monday by subtracting days from the current date
+  //copy today's date
+  const thursday = new Date(today); 
+  //calculate Thursday by subtracting days from the current date
+  thursday.setDate(today.getDate() - ((dayOfWeek + 3) % 7));
   const selectedThursday = Math.floor(thursday.getTime() / 1000);
 
-  const friday = new Date(today); // Copy today's date
-  friday.setDate(today.getDate() - (dayOfWeek - 5)); // Calculate Monday by subtracting days from the current date
+  //copy today's date
+  const friday = new Date(today); 
+  //calculate Friday by subtracting days from the current date
+  friday.setDate(today.getDate() - ((dayOfWeek + 2) % 7)); 
   const selectedFriday = Math.floor(friday.getTime() / 1000);
 
+  //for each day of the week uses the method fetchData with both the date and weatherData variable to store it in
   useEffect(() => {
     fetchData(selectedMonday, setWeatherDataMonday);
     fetchData(selectedTuesday, setWeatherDataTuesday);
     fetchData(selectedWednesday, setWeatherDataWednesday);
     fetchData(selectedThursday, setWeatherDataThursday);
     fetchData(selectedFriday, setWeatherDataFriday);
-  }, [locationSelected, selectedMonday, selectedTuesday]);
+  }, [locationSelected, selectedMonday, selectedTuesday, selectedWednesday, selectedThursday, selectedFriday]);
 
+  //for each day of the week fetches the minimum and maximum weather
+  //if it cannot fetch it the weather will be displayed as 'Loading...'
   const tempLowMon = weatherDataMonday ? weatherDataMonday.main.temp_min : "Loading...";
   const tempHighMon = weatherDataMonday ? weatherDataMonday.main.temp_max : "Loading...";
 
