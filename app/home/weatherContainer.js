@@ -2,13 +2,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './weather.css'
-import { unstable_renderSubtreeIntoContainer } from 'react-dom';
-
 
 export default function WeatherContainer({Title, locationSelected, times, uniLocation, homeLocation, at, to, searchLocation}) {
   var currentTime = {}
   var loc = {}
-
 
   //Constants used to provide city and recieve data from API
   const [city, setCity] = useState('');

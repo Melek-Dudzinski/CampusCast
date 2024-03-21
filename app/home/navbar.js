@@ -1,6 +1,6 @@
 'use client';
 import './navbar.css'
-import React, {useRef, useEffect, useState} from 'react';
+import React, {useRef, useEffect} from 'react';
 import { useSearchParams } from 'next/navigation'
 
 export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocation, setLocation, setSearchLocation}) {
@@ -9,8 +9,6 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
   const uniCaption = useRef(null)
   const home = useRef(null)
   const homeCaption = useRef(null)
-  var result = ''
-  const colors = ['rgba(130, 168, 236, 0.459)', 'lightgreen', 'lightpink', 'lightyellow', 'lightgray'];
   const searchParams = useSearchParams()
 
   //Change the color of the background on change
@@ -18,7 +16,7 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
     document.body.style.background = (event.target.value)
   }
 
-  //Change location of middle weather container when anything is typed into searchbar
+  //Change location of middle weather container when anything valid is typed into searchbar
   const handleLocationChange = (event) => {
     if (event.target.value !== ""){
       try {
@@ -79,14 +77,9 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
     for (var i = 0; i < contents.length; i++) {
       contents[i].classList.remove("active");
     }
-    
     var contentToShow = document.getElementById(id);
     contentToShow.classList.add("active");
   }
-
-  useEffect(() => {
-      console.log("reuslt changed")
-  }, [result])
 
   return (
     <>
@@ -121,7 +114,6 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
         </figure>
         <figure>
           <input onClick={()=>changeContent('content2')} id="change-background" type="image" src='/changeTheme.png'/>
-          {/* <input onClick={handleColorChange} /> */}
           <figcaption>Change Background</figcaption>
         </figure>
       </nav>

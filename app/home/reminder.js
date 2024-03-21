@@ -1,10 +1,9 @@
-import Image from 'next/image'
 import './reminder.css'
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 export default function Remainder({locationSelected}) {
-  //sets a useState for the weather data to ensure fteching it with a useEffect does not cause issues
+  //sets a useState for the weather data to ensure fetching it with a useEffect does not cause issues
   const [weatherData, setWeatherData] = useState(null);
 
   //fetches data with the fetchData method

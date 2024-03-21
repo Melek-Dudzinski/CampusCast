@@ -4,7 +4,6 @@ import axios from 'axios';
 
 export default function Weekly({ locationSelected}) {
   //sets a useState for the weather data to ensure fteching it with a useEffect does not cause issues
-  const [city, setCity] = useState('');
   //use states for each day of the week to prevent issues with the useEffect
   const [weatherDataMonday, setWeatherDataMonday] = useState(null);
   const [weatherDataTuesday, setWeatherDataTuesday] = useState(null);
