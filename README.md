@@ -17,3 +17,5 @@ How to run
 6. Run 'npm install axios' in terminal
 7. Run 'npm run dev' in terminal
 8. To navigate to the pages go to: localhost:3000/
+
+GITHUB: https://github.com/Melek-Dudzinski/CampusCast
