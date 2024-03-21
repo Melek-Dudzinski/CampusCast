@@ -5,11 +5,8 @@ import Link from 'next/link';
 
 export default function Form() {
 
+  //Const for the name
   const [myName, setName] = useState("John Doe");
-
-  // const handleInputChange = (event) => {
-  //   setName(event.target.value);
-  // };
 
   return (
     <>

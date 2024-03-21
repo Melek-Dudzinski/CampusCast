@@ -1,5 +1,7 @@
 import './landing.css';
 
+//Landing page seen on root url
+
 export default function Landing() {
   return (
     <>

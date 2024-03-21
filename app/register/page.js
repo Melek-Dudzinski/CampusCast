@@ -5,18 +5,22 @@ import Link from 'next/link';
 
 export default function Register() {
 
+  //Constants that will be passed t home page for name, university and home locations
   const [myName, setName] = useState("Real Name");
   const [myHome, setHome] = useState("");
   const [myUni, setUni] = useState("");
 
+  //Change name on input
   const handleNameChange = (event) => {
     setName(event.target.value);
   };
 
+  //Change home location on input
   const handleHomeChange = (event) => {
     setHome(event.target.value);
   };
 
+  //Change university location on input
   const handleUniChange = (event) => {
     setUni(event.target.value);
   };

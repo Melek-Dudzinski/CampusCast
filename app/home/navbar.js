@@ -4,23 +4,21 @@ import React, {useRef, useEffect, useState} from 'react';
 import { useSearchParams } from 'next/navigation'
 
 export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocation, setLocation, setSearchLocation}) {
+  // Constants used to see which sections of the navbar are selected
   const uni = useRef(null)
   const uniCaption = useRef(null)
   const home = useRef(null)
   const homeCaption = useRef(null)
   var result = ''
   const colors = ['rgba(130, 168, 236, 0.459)', 'lightgreen', 'lightpink', 'lightyellow', 'lightgray'];
-  // const [colorIndex, setColorIndex] = useState(0);
-
   const searchParams = useSearchParams()
 
+  //Change the color of the background on change
   const handleColorChange = (event) => {
-    // const nextColorIndex = (colorIndex + 1) % colors.length;
-    // document.body.style.background = colors[nextColorIndex];
-    // setColorIndex(nextColorIndex);
     document.body.style.background = (event.target.value)
   }
 
+  //Change location of middle weather container when anything is typed into searchbar
   const handleLocationChange = (event) => {
     if (event.target.value !== ""){
       try {
@@ -33,6 +31,7 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
     }
   }
 
+  //Run on uniToggle change, changes icon displayed and location displayed
   useEffect(() => {
     if (uniToggle===true){
       setLocation(uniLocation)
@@ -42,6 +41,8 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
       enlarge(home)}
   }, [uniToggle])
 
+
+  //Enlarge button pressed
   function enlarge(button){
     if (button===uni){
       home.current.style.scale=null
@@ -59,6 +60,7 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
     lower()
   }
 
+  //Lower and bold text of button pressed
   function lower(){
     if (uniToggle===true){
       uniCaption.current.style.position="relative"
@@ -71,6 +73,7 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
     }
   }
 
+  //Changes whether searchbar or color picker is displayed
   function changeContent(id) {
     var contents = document.getElementsByClassName("content");
     for (var i = 0; i < contents.length; i++) {

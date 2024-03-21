@@ -10,6 +10,7 @@ import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation'
 
 export default function Main() {
+  //Hardcoded home/uni/current locations and arrive/leave times
   var uniLocation = "Mile End, London";
   var homeLocation = "Finsbury Park, London";
   var currentLocation = "Homerton, London";
@@ -19,6 +20,7 @@ export default function Main() {
   var arriveHomeTime = "7:00 PM";
   var realTime = true;
 
+  //Get parameters from url passed from other page
   const searchParams = useSearchParams()
   if (searchParams.get('myHome') !== null && searchParams.get('myHome') !== ""){
     console.log(searchParams.get('myHome'))
@@ -28,12 +30,18 @@ export default function Main() {
     uniLocation = searchParams.get('myUni')
   }
 
+  //Array of hardcoded times for ease of use
   const leaveTimes = [leaveHomeTime, leaveUniTime]
   const arriveTimes = [arriveHomeTime, arriveUniTime]
 
+  //Use states used to see which locations are selected to be displayed
   const [uniToggle, setUniToggle] = useState(true)
   const [locationSelected, setLocation] = useState(uniLocation)
   const [searchLocation, setSearchLocation] = useState(currentLocation);
+
+  //Semi working code to get users current location, stops search bar from working
+  //<<<
+
   // const [myLocation, setMyLocation] = useState();
   // const [lat, setLat] = useState();
   // const [lon, setLon] = useState();
@@ -67,8 +75,6 @@ export default function Main() {
   //   fetchLocation();
   // }
 
-
-
   // useEffect(() => {
   //   console.log(searchLocation)
   //   console.log("1")
@@ -80,6 +86,8 @@ export default function Main() {
   //     setSearchLocation(myLocation[0].name)
   //   }
   // })
+
+  //>>> End of semi working code
 
   return (
     <>

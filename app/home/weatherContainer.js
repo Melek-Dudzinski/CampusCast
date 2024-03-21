@@ -9,9 +9,12 @@ export default function WeatherContainer({Title, locationSelected, times, uniLoc
   var currentTime = {}
   var loc = {}
 
+
+  //Constants used to provide city and recieve data from API
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState(null);
 
+  //API call
   const fetchData = async () => {
     try {
       const MY_API_KEY = "47587e19f823f14e08d26b63b7a1f07d"
@@ -24,6 +27,7 @@ export default function WeatherContainer({Title, locationSelected, times, uniLoc
     }
   };
   
+  //Check which weather container and display corrent location
   if (typeof times === "boolean") {
     loc = ""
   } else {
@@ -38,6 +42,7 @@ export default function WeatherContainer({Title, locationSelected, times, uniLoc
     }
   }
 
+  //Get the time used in the API call into the correct format
   if (typeof times === "boolean") {
       //Need the date object with the variable name date exported
       var date = new Date()
@@ -70,6 +75,8 @@ export default function WeatherContainer({Title, locationSelected, times, uniLoc
     currentTime = times[0]
   }
 
+
+  //Get time into correct format for API call
   var newDate = new Date();
   var AMPM = currentTime.toString().slice(-2)
   var hour = currentTime.toString().slice(0, -6)
@@ -78,7 +85,7 @@ export default function WeatherContainer({Title, locationSelected, times, uniLoc
   }
   var min = currentTime.toString().slice(0, -3).slice(3)
 
-
+  //Check which weather container and set city and date to fetch correct data
   useEffect(() => {
     if (typeof city !== 'undefined'){
       if (to) {

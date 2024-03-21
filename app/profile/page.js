@@ -6,6 +6,8 @@ import Link from 'next/link';
 
 export default function Profile() {
 
+  //Hardcoded all fields of the form
+  //Constant for name as updates change name on home page
   const [myName, setName] = useState("John Doe");
   const myEmail = "real@email.com";
   const uniName = "QMUL";
@@ -23,6 +25,7 @@ export default function Profile() {
   const weeklyTimes = [mondayCome, mondayLeave, tuesdayCome, tuesdayLeave, wednesdayCome, wednesdayLeave, thursdayCome, thursdayLeave, fridayCome, fridayLeave];
   const homePostcode = "E3 4NX";
 
+  //Change name on input from field
   const handleInputChange = (event) => {
     setName(event.target.value);
   };
