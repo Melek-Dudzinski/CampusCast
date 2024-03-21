@@ -33,12 +33,7 @@ table {
   margin-bottom:0.6em;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="time"],
-textarea,
-select {
+input[type="text"], input[type="email"], input[type="password"], input[type="time"], textarea, select {
   width: calc(100% - 2em); /* Full width minus padding */
   margin-bottom: 1em; /* Add space below inputs */
   padding: 5px;
@@ -55,7 +50,6 @@ button {
 td{
   padding:0.3em;
 }
-
 
 /* Styles for table to make it responsive */
 table {

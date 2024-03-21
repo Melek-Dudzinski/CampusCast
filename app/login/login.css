@@ -11,8 +11,7 @@
   grid-gap: 20px;
 }
   
-.login-box input[type="email"],
-.login-box input[type="password"] {
+.login-box input[type="email"], .login-box input[type="password"] {
   width: 100%;
   padding: 8px;
   margin-bottom: 10px;
@@ -27,6 +26,7 @@
   background-color: #1d9812; 
   color: white;
 }
+
 .login-box button[type="submit"]:active{  
   background-color: yellow;
   color: rgb(0, 0, 0);
