@@ -18,8 +18,7 @@ export default function Form() {
           <section>
             <label for="username">Email:</label>
             <input type="email" id="username" name="username" required/><br/>
-            {/* <!-- Use type="email" for email validation and "required" to make the field mandatory --> */}
-                
+            {/* <!-- Use type="email" for email validation and "required" to make the field mandatory --> */} 
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" minlength="8" required/><br/>
             {/* <!-- Use "minlength" to specify the minimum number of characters required for the password --> */}

@@ -87,8 +87,8 @@ export default function Navbar({uniToggle, setUniToggle, uniLocation, homeLocati
         <table>
           <tbody>
             <tr>
-            <td style={{ width: '15%'}}><a href="/"><input id="logout" type="image" src="/logout.png"/></a></td>
-            <td><h1 id="greeting">Hello {searchParams.get('myName')}!</h1></td>
+              <td style={{ width: '15%'}}><a href="/"><input id="logout" type="image" src="/logout.png"/></a></td>
+              <td><h1 id="greeting">Hello {searchParams.get('myName')}!</h1></td>
             </tr>
           </tbody>
         </table>
